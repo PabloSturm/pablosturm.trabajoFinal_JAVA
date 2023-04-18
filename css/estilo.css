@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+
+}
+body, header, main, footer {
+    min-height: 50px;
+    min-width: 450px;
+}
+header{
+    width: 100%;
+    height: 157px;
+    background:rgb(245, 200, 118);
+    position: fixed;/*para que se manenga arriba de todo*/
+    z-index: 10;/*para todo lo que se ponga en la pagina quede abajo*/
+}
+.img_logo{
+    width: 150px;
+    margin-left: 5%;
+    padding: 10px;
+}
+#nombre{
+    font-family: 'Clicker Script', cursive;
+    font-size: 4rem;
+    font-weight: bold;
+    position: fixed;
+    color: #784b4a;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+.menu{
+    width: auto;
+    float: right;
+    margin-top: 126px;
+    margin-right: 5%;
+}
+.menu ul{
+    display: flex;
+}
+.menu li{
+    list-style: none;
+}
+.menu li a{
+    padding: 10px;
+    text-decoration: none;
+    color:#784b4a;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.menu li a:hover{
+    color:chocolate;
+}
+#check{
+    display: none;
+
+}
+.icon_menu{
+    display: none;
+}
+
+#check:checked ~ .menu{
+    height: 180px;
+}
+
+/* ============== cuerpo ========== */
+main{
+    position: relative;
+    top: 150px;
+}
+.contenedor_ppal{
+    width: 100%;
+}
+.contenedor_portada{
+    width: 100%;
+    height: 400px;
+    background-image: url(../img/Vicky_GurumiS.png);
+    background-position: center center;
+    background-size: 350px;
+    background-repeat: no-repeat;
+    background-color: rgb(254, 248, 239);
+}
+.contenedor_texto{
+    position: absolute;
+    width: 300px;
+    margin: 5% 3%;
+    text-align: center;
+}
+.contenedor_texto h3{
+    color: rgb(66, 43, 7);
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'Clicker Script', cursive;
+}
+.contenedor_texto h4{
+    color: chocolate;
+    font-size: 2rem;
+    font-weight: 100;
+}
+/* items del cuerpo principal*/
+.contenedor_sec{
+    width: 100%;
+    background-color: rgb(254, 248, 239);
+    padding: 40px;
+}
+.contenedor_detalle{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item{
+    width: 300px;
+    text-align: center;
+    margin: 20px;
+
+}
+.contenedor_music{
+    width: 100%;
+    background-color: orange;
+    padding: 30px;
+    text-align: center;
+}
+
+footer{
+    background-color: chocolate;
+}
+/* ================ responsive ==============*/
+
+@media screen and (max-width:1000px){
+    .contenedor_texto h3{
+        font-size: 4rem;
+    }
+    .contenedor_texto h4{
+        font-size: 1.5rem;
+    }
+    .contenedor_portada{
+        height: 300px;
+        background-size: 250px;
+    }
+}
+@media screen and (max-width:900px){
+    .icon_menu{
+        display: block;
+        color: chocolate;
+        float:right;
+        padding: 3px;
+        font-size: 24px;
+        border: 1px solid #7a7a7a;
+        border-radius: 5px;
+        margin-top: 115px;
+        margin-right: 10px;
+    }
+    .icon_menu:hover{
+        background: rgb(240, 216, 171);
+        cursor:pointer;
+    }
+    .menu{
+        text-align: right;
+        margin-top: 0px;
+        margin-right: 0;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        *transition: all 300ms;
+        background:rgb(245, 200, 118);
+    }
+    .menu ul{
+        flex-direction: column;
+    }
+    .menu li a{
+        display: block;/*efecto ladrillo*/
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width:850px){
+    .contenedor_texto h3{
+        font-size: 3rem;
+    }
+    .contenedor_texto h4{
+        font-size: 1rem;
+    }
+    .contenedor_portada{
+        height: 200px;
+        background-size: 175px;
+    }
+    .contenedor_texto{
+        width: 200px;
+        margin: 2% 1%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .img_logo{
+        width: 120px;
+        margin-left: 4%;
+        padding: 8px;
+    }
+    #nombre{
+        font-family: 'Clicker Script', cursive;
+        font-size: 3rem;
+        font-weight: bold;
+        position: fixed;
+        color: #784b4a;
+        margin-top: 30px;
+        margin-left: 8px;
+    }
+    header{
+        width: 100%;
+        height: 130px;
+        background:rgb(245, 200, 118);
+        position: fixed;/*para que se manenga arriba de todo*/
+        z-index: 10;/*para todo lo que se ponga en la pagina quede abajo*/
+    }
+    .icon_menu{
+        display: block;
+        color: chocolate;
+        float:right;
+        padding: 3px;
+        font-size: 18px;
+        border: 1px solid #7a7a7a;
+        border-radius: 5px;
+        margin-top: 95px;
+        margin-right: 10px;
+    }
+    .icon_menu:hover{
+        background: rgb(240, 216, 171);
+        cursor:pointer;
+    }
+    .menu{
+        text-align: right;
+        margin-top: 0px;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        background:rgb(245, 200, 118);
+    }
+    .menu ul{
+        flex-direction: column;
+    }
+    .menu li a{
+        display: block;/*efecto ladrillo*/
+        font-size: 14px;
+    }
+    #check:checked ~ .menu{
+        height: 160px;
+    }
+    main{
+        top: 125px;
+    }
+    .contenedor_texto{
+        width: 175px;
+        margin: 1% 0;
+    }
+    .contenedor_texto h3{
+        font-size: 2.5rem;
+    }
+    .contenedor_texto h4{
+        font-size: .75rem;
+    }
+    .contenedor_portada{
+        height: 150px;
+        background-size: 125px;
+    }
+}
