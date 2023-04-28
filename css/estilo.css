@@ -12,7 +12,7 @@ body, header, main, footer {
 header{
     width: 100%;
     height: 157px;
-    background:rgb(245, 200, 118);
+    background:#f5eadb;
     position: fixed;/*para que se manenga arriba de todo*/
     z-index: 10;/*para todo lo que se ponga en la pagina quede abajo*/
 }
@@ -27,8 +27,8 @@ header{
     font-weight: bold;
     position: fixed;
     color: #784b4a;
-    margin-top: 40px;
-    margin-left: 10px;
+    margin-top: 50px;
+    margin-left: 40px;
 }
 .menu{
     width: auto;
@@ -50,7 +50,7 @@ header{
     font-weight: bold;
 }
 .menu li a:hover{
-    color:chocolate;
+    color:rgb(239, 192, 159);
 }
 #check{
     display: none;
@@ -94,10 +94,11 @@ main{
     font-family: 'Clicker Script', cursive;
 }
 .contenedor_texto h4{
-    color: chocolate;
+    color: rgb(141, 108, 84);
     font-size: 2rem;
     font-weight: 100;
 }
+
 /* items del cuerpo principal*/
 .contenedor_sec{
     width: 100%;
@@ -117,15 +118,9 @@ main{
     margin: 20px;
 
 }
-.contenedor_music{
-    width: 100%;
-    background-color: orange;
-    padding: 30px;
-    text-align: center;
-}
 
 footer{
-    background-color: chocolate;
+    background-color:  rgb(138, 107, 84);
 }
 /* ================ responsive ==============*/
 
