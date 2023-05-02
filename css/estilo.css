@@ -122,6 +122,72 @@ main{
 footer{
     background-color:  rgb(138, 107, 84);
 }
+.formulario{
+    background: rgb(240, 216, 171);
+    width: 460px; 
+    height: auto;
+    margin: 80px auto;
+    border-radius: 10px;  
+    padding-top: 30px;
+    padding-bottom: 20px;   
+    padding-left: 30px;         
+}
+input{
+    background-color: #fbfbfb; 
+    width: 408px; 
+    height: 40px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: rgb(245, 200, 118);
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+  }
+.boton{
+  height: 45px; 
+  padding-left: 5px;
+  padding-right: 5px;   
+  margin-bottom: 20px; 
+  margin-top: 10px;   
+  text-transform: uppercase;
+  background-color: rgb(245, 200, 118); 
+  border-color: rgb(245, 200, 118); 
+  border-style: solid; 
+  border-radius: 10px;  
+  width: 408px;   
+  cursor: pointer;
+}
+textarea{
+    background-color: #fbfbfb; 
+    width: 408px; 
+    height: 150px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: rgb(245, 200, 118);
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+    padding-top: 15px; 
+  }
+  select{
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+    padding-top: 15px; 
+    width: 408px; 
+  }
+  audio { 
+    text-align: right;
+    width: 250px; 
+    box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
+    border-radius: 90px;
+    transform: scale(1.05);
+  }
+  
+
+
 /* ================ responsive ==============*/
 
 @media screen and (max-width:1000px){
@@ -260,4 +326,5 @@ footer{
         height: 150px;
         background-size: 125px;
     }
+   
 }
