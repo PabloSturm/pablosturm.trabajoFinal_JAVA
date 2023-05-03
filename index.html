@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/estilo.css" />
+    <link rel="stylesheet" href="css/main_index.css">
     <title>V i c k y G u r u m i S</title>
   </head>
   <body>
@@ -30,10 +31,9 @@
           class="icon_menu"
         ></iconify-icon>
       </label>
-        <audio autoplay >
-  <source src="audio/musica-relajante-dolphin.mp3" type="audio/mp3">
-</audio>
-                
+        <!-- <audio controls autoplay >
+          <source src="audio/musica-relajante-dolphin.mp3" type="audio/mp3">
+        </audio>              -->
 
       <nav class="menu">
         <ul>
@@ -46,12 +46,31 @@
         </ul>
       </nav>
     </header>
+
     <main>
       <div class="contenedor_ppal">
+        <div class="contenedor_carrousel">
+          <div class="contenedor_imagenes">
+          <input type="radio" name="carrousel" id="item_1" checked>
+          <input type="radio" name="carrousel" id="item_2">
+          <input type="radio" name="carrousel" id="item_3">
+
+          <div class="imagenes">
+            <label class="imagen" for="item_1" id="selector_1">
+              <img src="img/Vicky_GurumiS.png">
+            </label>
+            <label class="imagen" for="item_2" id="selector_2">
+              <img src="img/chase.png">
+            </label>
+            <label class="imagen" for="item_3" id="selector_3">
+              <img src="img/principitodegala.png">
+            </label>
+          </div>
+          </div>
+        </div>
         <div class="contenedor_portada">
           <div class="contenedor_texto">
-            <h3>Tienda de Amigurumis</h3>
-            <h3>y Patrones para crearlos</h3>
+            <h3>Tienda de Amigurumis y Patrones para crearlos</h3>
           </div>
         </div>
       </div>
