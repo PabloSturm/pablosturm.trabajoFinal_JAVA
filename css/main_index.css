@@ -1,0 +1,108 @@
+/* ============== cuerpo ========== */
+
+.contenedor_ppal{
+  width: 100%;
+}
+.contenedor_carrousel{
+  width: 100%;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+  background-color: rgb(254, 248, 239);
+}
+input[type=radio]{
+  display: none;
+}
+.contenedor_imagenes{
+  width: 100%;
+  height: 100%;
+  max-width: 80%;
+  max-height: 90%;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagenes{
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+.imagen{
+  width: 30%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44,1);
+}
+.imagenes img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  border: #784b4a thin solid;
+}
+
+#item_2:checked ~ .imagenes #selector_1,
+#item_1:checked ~ .imagenes #selector_3,
+#item_3:checked ~ .imagenes #selector_2{
+  transform: translateX(-40%) scale(0.8);
+  opacity: 0.6;
+  z-index: 0;
+}
+#item_3:checked ~ .imagenes #selector_1,
+#item_1:checked ~ .imagenes #selector_2,
+#item_2:checked ~ .imagenes #selector_3{
+  transform: translateX(40%) scale(0.8);
+  opacity: 0.6;
+  z-index: 0;
+}
+#item_1:checked ~ .imagenes #selector_1,
+#item_2:checked ~ .imagenes #selector_2,
+#item_3:checked ~ .imagenes #selector_3{
+  transform: translateX(0) scale();
+  z-index: 1;
+}
+.contenedor_portada{
+  width: 100%;
+  height: 200px;
+  background-color: rgb(254, 248, 239);
+}
+.contenedor_texto{
+  position: absolute;
+  width: 100%;
+  margin: 5% 3%;
+  text-align: center;
+}
+.contenedor_texto h3{
+  color: rgb(66, 43, 7);
+  font-size: 5rem;
+  font-weight: bold;
+  font-family: 'Clicker Script', cursive;
+}
+
+/* items del cuerpo principal*/
+.contenedor_sec{
+  width: 100%;
+  background-color: rgb(254, 248, 239);
+  padding: 40px;
+}
+.contenedor_detalle{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.item{
+  width: 300px;
+  text-align: center;
+  margin: 20px;
+}
