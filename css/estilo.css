@@ -9,12 +9,13 @@ body, header, main, footer {
     min-height: 50px;
     min-width: 450px;
 }
+/*encabezado*/
 header{
     width: 100%;
     height: 157px;
     background:#f5eadb;
-    position: fixed;/*para que se mantenga arriba de todo*/
-    z-index: 10;/*para todo lo que se ponga en la pagina quede abajo*/
+    position: fixed;
+    z-index: 10;
 }
 .img_logo{
     width: 150px;
@@ -30,28 +31,44 @@ header{
     margin-top: 50px;
     margin-left: 40px;
 }
+
+/* menues y submenues*/
 .menu{
     width: auto;
     float: right;
     margin-top: 126px;
     margin-right: 5%;
 }
-.menu ul{
-    display: flex;
-}
-.menu li{
-    list-style: none;
-}
-.menu li a{
-    padding: 10px;
+.menu a{
+    padding: 15px;
     text-decoration: none;
     color:#784b4a;
     font-size: 1rem;
     font-weight: bold;
 }
-.menu li a:hover{
+
+.menu a:hover{
     color:rgb(239, 192, 159);
 }
+
+.menu ul{
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li:hover ul{
+    display: block;
+    background-color:#f5eadb;
+}
+
+.menu ul li ul{
+    top: 155px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    padding: 10px 5px;
+}
+
 #check{
     display: none;
 }
@@ -66,78 +83,13 @@ header{
 main{
     position: relative;
     top: 150px;
-  }
+}
 
 footer{
     width: 100%;
     height: 75px;
     background-color:  rgb(138, 107, 84);
 }
-.formulario{
-    background: rgb(240, 216, 171);
-    width: 460px; 
-    height: auto;
-    margin: 80px auto;
-    border-radius: 10px;  
-    padding-top: 30px;
-    padding-bottom: 20px;   
-    padding-left: 30px;         
-}
-input{
-    background-color: #fbfbfb; 
-    width: 408px; 
-    height: 40px; 
-    border-radius: 5px;  
-    border-style: solid; 
-    border-width: 1px; 
-    border-color: rgb(245, 200, 118);
-    margin-top: 10px;  
-    padding-left: 10px;
-    margin-bottom: 20px; 
-  }
-.boton{
-  height: 45px; 
-  padding-left: 5px;
-  padding-right: 5px;   
-  margin-bottom: 20px; 
-  margin-top: 10px;   
-  text-transform: uppercase;
-  background-color: rgb(245, 200, 118); 
-  border-color: rgb(245, 200, 118); 
-  border-style: solid; 
-  border-radius: 10px;  
-  width: 408px;   
-  cursor: pointer;
-}
-textarea{
-    background-color: #fbfbfb; 
-    width: 408px; 
-    height: 150px; 
-    border-radius: 5px;  
-    border-style: solid; 
-    border-width: 1px; 
-    border-color: rgb(245, 200, 118);
-    margin-top: 10px;  
-    padding-left: 10px;
-    margin-bottom: 20px; 
-    padding-top: 15px; 
-  }
-  select{
-    margin-top: 10px;  
-    padding-left: 10px;
-    margin-bottom: 20px; 
-    padding-top: 15px; 
-    width: 408px; 
-  }
-  audio { 
-    text-align: right;
-    width: 250px; 
-    box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
-    border-radius: 90px;
-    transform: scale(1.05);
-  }
-  
-
 
 /* ================ responsive ==============*/
 
