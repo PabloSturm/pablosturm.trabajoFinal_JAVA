@@ -42,3 +42,73 @@ items del cuerpo principal
   text-align: center;
   margin: 20px;
 }
+.formulario{
+  background: rgb(240, 216, 171);
+  width: 700px; 
+  height: auto;
+  margin: auto;
+  border-radius: 20px;  
+  border-color: #784b4a;
+  border-style:solid;
+  padding-top: 30px;
+  padding-bottom: 20px;   
+  padding-left: 30px;      
+}
+.form-control{
+  background-color: #fbfbfb; 
+  width: 580px; 
+  height: 40px; 
+  border-radius: 5px;  
+  border-style: solid; 
+  border-width: 1px; 
+  border-color: rgb(245, 200, 118);
+  margin-top: 10px;
+  margin-right: 500px;  
+  margin-left: 30px;
+  margin-bottom: 20px;
+  padding-left: 10px; 
+}
+.boton{
+font-size: large;
+height: 45px; 
+width: 580px;   
+margin-bottom: 20px; 
+margin-left: 30px;
+margin-top: 10px;   
+text-transform: uppercase;
+background-color: rgb(245, 200, 118); 
+border-color: rgb(245, 200, 118); 
+border-radius: 10px;  
+border-color: #784b4a;
+border-style:solid; 
+cursor: pointer;
+}
+textarea{
+  background-color: #fbfbfb; 
+  width: 580px; 
+  height: 150px; 
+  border-radius: 5px;  
+  border-style: solid; 
+  border-width: 1px; 
+  border-color: rgb(245, 200, 118); 
+  padding-left: 10px;
+  padding-top: 15px;
+  margin-top: 10px; 
+  margin-bottom: 20px; 
+}
+.form-select{
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  height: 45px;
+  width: 580px; 
+}
+.form-label{
+  font-size: large;
+  padding-left: 32px;
+}
+.form_texto{
+  text-align: center;
+  font-size: large;
+}

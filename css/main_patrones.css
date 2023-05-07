@@ -108,11 +108,11 @@
   }
 /* ============== cuerpo ========== */
 
-.contenedor_sec{
+/* .contenedor_sec{
     width: 100%;
     height: 100%;
     background-color: rgb(254, 248, 239);
-  }
+  } */
   .contenedor_tarjeta{
     width: 100%;
     display:flex;
@@ -139,6 +139,7 @@
   .tarjeta:hover{
     box-shadow: 5px 5px 20px rgba(0,0,0,0.8);
     transform: translateY(-2%);
+    transform: scale(1.15);
   }
   
   .marcoTarjeta{
