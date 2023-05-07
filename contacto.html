@@ -68,11 +68,45 @@
           </div>
         </div>
       </div>
-      <div class="contenedor_sec">
-        <div class="contenedor_detalle">
-          
+
+      <div class="formulario">
+        <div class="form_texto">
+            <h3>Dejanos tus datos y nos pondremos en contacto</h3>
         </div>
-      </div>
+        
+        <form>
+
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputNombre" placeholder="Escriba su nombre" required>
+
+            <label for="inputApellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="inputApellido" placeholder="Escriba su apellido" required>
+
+            <label for="inputMail" class="form-label">Mail</label>
+            <input type="text" class="form-control" id="inputMail" placeholder="Escriba su mail" required>
+
+            <label for="inputTelefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="inputTelefono"
+                placeholder="Código e área sin 0 y número sin 15" required>
+
+            <label for="inputState" class="form-label">Como te enteraste de nosotros?</label>
+            <select id="inputState" class="form-select">
+                <option selected></option>
+                <option>Por recomendación de alguien</option>
+                <option>Por Redes Sociales</option>
+                <option>Buscando en Google</option>
+                <option>Otros</option>
+            </select>
+
+            <label for="exampleFormControlTextarea1" class="form-label">Esribinos tu consulta:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+            <button type="submit" class="boton">Enviar</button>
+
+        </form>
+    </div>
+
+      
       <footer>
         <p class="parrafo1">Derechos&Reservados 2023</p>
         <a href="https://www.instagram.com/vicky_gurumis/" target="_blank">
