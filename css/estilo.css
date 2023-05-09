@@ -38,7 +38,7 @@ header{
     width: auto;
     float: right;
     margin-top: 115px;
-    margin-right: 5%;
+    margin-right: 2%;
 }
 .menu a{
     padding: 15px;
@@ -111,15 +111,16 @@ main{
     top: 150px;
 }
 footer{
+    position:absolute;
     width: 100%;
     height: 75px;
-    background-color:  rgb(138, 107, 84);
+    background: linear-gradient(to right, rgb(239, 192, 159), rgb(138, 107, 84));
 }
 
 /* ================ responsive ==============*/
 
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:950px){
     .icon_menu{
         display: block;
         color: chocolate;
@@ -129,27 +130,44 @@ footer{
         border: 1px solid #7a7a7a;
         border-radius: 5px;
         margin-top: 115px;
-        margin-right: 10px;
+        margin-right: 20px;
     }
     .icon_menu:hover{
         background: rgb(240, 216, 171);
         cursor:pointer;
     }
     .menu{
-        display:initial;
-        margin-top: 0px;
-        margin-right: 0;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 25%;
+        text-align: right;
+        display: none;
+        background:#f5eadb;
+    }
+
+    .menu ul li {
         width: 100%;
-        overflow: hidden;
-        transition: all 300ms;
-        background:rgb(245, 200, 118);
     }
-    .menu ul{
-        flex-direction: row;
+    .menu ul li a{
+        width: 100%;
+        padding: 8px 10px;
     }
-    .menu li a{
-        display: block;/*efecto ladrillo*/
-        margin-right: 10px;
+    .menu ul li ul{
+        position:relative;
+        width: 80%;
+        top:0;
+        left: 10%;
+    }
+
+    .menu ul li ul li ul{
+        position:relative;
+        width:60%;
+        left: 10%;
+    }
+
+    #check:checked ~ .menu{
+        display: block;
     }
 }
 
@@ -171,9 +189,9 @@ footer{
     header{
         width: 100%;
         height: 130px;
-        background:rgb(245, 200, 118);
-        position: fixed;/*para que se manenga arriba de todo*/
-        z-index: 10;/*para todo lo que se ponga en la pagina quede abajo*/
+        background:#f5eadb;
+        position: fixed;
+        z-index: 10;
     }
     .icon_menu{
         display: block;
@@ -190,23 +208,40 @@ footer{
         background: rgb(240, 216, 171);
         cursor:pointer;
     }
+
     .menu{
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 12%;
         text-align: right;
-        margin-top: 0px;
+        display: none;
+        background:#f5eadb;
+    }
+
+    .menu ul li {
         width: 100%;
-        height: 0px;
-        overflow: hidden;
-        background:rgb(245, 200, 118);
     }
-    .menu ul{
-        flex-direction: column;
-    }
-    .menu li a{
-        display: block;/*efecto ladrillo*/
+    .menu ul li a{
         font-size: 14px;
+        width: 100%;
+        padding: 8px 10px;
     }
+    .menu ul li ul{
+        position:relative;
+        width: 80%;
+        top:0;
+        left: 10%;
+    }
+
+    .menu ul li ul li ul{
+        position:relative;
+        width:60%;
+        left: 10%;
+    }
+
     #check:checked ~ .menu{
-        height: 160px;
+        display: block;
     }
     main{
         top: 125px;
