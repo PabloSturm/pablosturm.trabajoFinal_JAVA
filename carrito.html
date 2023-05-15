@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="Es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="favicom/VickyGurumiS.ico"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Kanit:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <link rel="stylesheet" href="css/main_index.css">
+    <link rel="stylesheet" href="css/main_carrito.css">
+    <title>V i c k y G u r u m i S</title>
+  </head>
+  <body>
+    <header>
+      <img src="iconos/Gurumis.png" class="img_logo" alt=" logo" />
+      <label for="campo_nombre" id="nombre">Vicky GurumiS</label>
+      <input type="checkbox" id="check" />
+      <label for="check">
+        <iconify-icon
+          icon="material-symbols:menu"
+          class="icon_menu"
+        ></iconify-icon>
+      </label>
+    <!--    <audio controls autoplay >
+          <source src="audio/musica-relajante-dolphin.mp3" type="audio/mp3">
+        </audio>             -->
+
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html" style="background: #e5c89f ; color:rgb(103, 100, 100)" >Inicio</a></li>
+          <li><a href="info.html">Acerca de</a></li>
+          <li><a href="#">Productos</a>
+            <ul>
+              <li><a href="">Amigurumis</a>
+                <ul>
+                  <li><a href="personajes.html">Personajes</a></li>
+                  <li><a href="animales.html">Animales</a></li>
+                  <li><a href="munequeria.html">Muñequeria</a></li>
+                </ul>
+              </li>
+              <li><a href="">Patrones</a>
+                <ul>
+                  <li><a href="patrones_free.html">Free</a></li>
+                  <li><a href="patrones_de_pago.html">De_Pago</a></li>
+                </ul>
+              </li>
+            </ul>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="carrito.html">Tienda</a></li>
+        </ul>  
+      </nav>
+
+    </header>
+
+    <main>
+        <!--NavBar-->
+        <div class="nav-container">
+          <nav class="navbar">
+            <h2 class="navbar-logo">Tienda virtual...</h2>
+            <h3>Aqui encontraras productos en stock para entrega inmediata</h3>
+            <h2 class="ver-carrito" id="verCarrito">🛒</h2>
+          </nav>
+        </div>
+  
+        <!--banner-->
+        <!-- <div class="banner">
+          <div class="banner-container">
+            <h2>V i c k y G u r u m i S</h2>
+            <p>Tienda Virtual</p>
+          </div>
+        </div> -->
+        <!--shop content-->
+        <div id="shopContent" class="shop-content"></div>
+
+        <!--modal container-->
+        <div id="modal-container" class="modal-container"></div>
+      </main>   
+      <!-- <footer>
+        <p class="parrafo1">Derechos&Reservados 2023</p>
+        <a href="https://www.instagram.com/vicky_gurumis/" target="_blank">
+          <img src="img/Vicky_GurumiS.png" alt="Instagram" width="50" height="50" /></a>
+      </footer> -->
+      <script src="./JS/tienda.js/productos.js"></script>
+      <script src="./JS/tienda.js/main.js"></script>
+      <script src="./JS/tienda.js/carrito.js"></script>
+  </body>
+</html>
