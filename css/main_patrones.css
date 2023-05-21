@@ -92,7 +92,7 @@
   .contenedor_sec{
     width: 100%;
     background-color: rgb(254, 248, 239);
-    padding: 40px;
+    padding: 20px;
   }
   .contenedor_detalle{
     width: 90%;
@@ -102,17 +102,11 @@
     justify-content: center;
   }
   .item{
-    width: 300px;
+    width: 80%;
     text-align: center;
     margin: 20px;
   }
 /* ============== cuerpo ========== */
-
-/* .contenedor_sec{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(254, 248, 239);
-  } */
   .contenedor_tarjeta{
     width: 100%;
     display:flex;
@@ -120,9 +114,8 @@
     flex-wrap: wrap;  
     justify-content: center;
     background-color: rgb(254, 248, 239);
-    padding: 175px 10px 15px 10px;
+    padding: 15px 10px 15px 10px;
   }
-  
   .tarjeta{
     width: 24em; 
     background-color: #fff;
@@ -134,31 +127,26 @@
     box-shadow: 0px 1px 10px rgba(0,0,0,0.3) ;
     cursor: default;
     transition: all 400ms ease;
-  }
-  
+  } 
   .tarjeta:hover{
     box-shadow: 5px 5px 20px rgba(0,0,0,0.8);
     transform: translateY(-2%);
     transform: scale(1.15);
   }
-  
   .marcoTarjeta{
     padding: .8em;
     border-radius: 0.5em;
   }
-  
   .marcoTarjeta img{ 
     width:100%;
     border-radius: 0.5em 0.5em;
   }
-  
   .textoTarjeta{
     background-color: #fff;
     padding: .8em;
     border-radius: 0 0 .5em .5em;
     margin: 0.2em 0 0 0;
   }
-  
   .textoTarjeta h2{
     font-size: 2em;
   }
@@ -175,5 +163,4 @@
   .textoTarjeta h3{
     text-align: left;
     font-size: 1.5em;
-  
   }

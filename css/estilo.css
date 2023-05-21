@@ -8,6 +8,7 @@ body, header, main, footer {
     max-width: 1800px;
     min-height: 50px;
     min-width: 450px;
+    background: rgb(254, 248, 239);
 }
 /*encabezado*/
 header{
@@ -106,9 +107,12 @@ top: 78%;
     height: 180px;
 }
 
+/* ================================ CUERPO PRINCIPAL ================================================*/
+
 main{
     position: relative;
     top: 150px;
+
 }
 footer{
     position:absolute;

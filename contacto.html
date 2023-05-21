@@ -1,116 +1,170 @@
 <!DOCTYPE html>
 <html lang="Es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="favicom/VickyGurumiS.ico"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Kanit:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <link rel="stylesheet" href="css/main_contacto.css" />
+    <title>V i c k y G u r u m i S</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="favicom/VickyGurumiS.ico" type="image/x-icon" />
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Kanit:ital,wght@0,400;0,500;1,400&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="css/estilo.css" />
-  <link rel="stylesheet" href="css/main_contacto.css">
-  <title>V i c k y G u r u m i S</title>
-</head>
+  <body>
+    <header>
+      <img src="iconos/Gurumis.png" class="img_logo" alt=" logo" />
+      <label for="campo_nombre" id="nombre">Vicky GurumiS</label>
+      <input type="checkbox" id="check" />
+      <label for="check">
+        <iconify-icon
+          icon="material-symbols:menu"
+          class="icon_menu"
+        ></iconify-icon>
+      </label>
 
-<body>
-  <header>
-    <img src="iconos/Gurumis.png" class="img_logo" alt=" logo" />
-    <label for="campo_nombre" id="nombre">Vicky GurumiS</label>
-    <input type="checkbox" id="check" />
-    <label for="check">
-      <iconify-icon icon="material-symbols:menu" class="icon_menu"></iconify-icon>
-    </label>
-
-    <!-- <audio controls autoplay>
+      <!-- <audio controls autoplay>
         <source src="audio/musica-relajante-dolphin.mp3" type="audio/mpeg">
       </audio>  -->
 
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html" style="background: #e5c89f ; color:rgb(103, 100, 100)">Inicio</a></li>
-        <li><a href="info.html">Acerca de</a></li>
-        <li><a href="#">Productos</a>
-          <ul>
-            <li><a href="">Amigurumis</a>
-              <ul>
-                <li><a href="personajes.html">Personajes</a></li>
-                <li><a href="animales.html">Animales</a></li>
-                <li><a href="munequeria.html">Muñequería</a></li>
-              </ul>
-            </li>
-            <li><a href="">Patrones</a>
-              <ul>
-                <li><a href="patrones_free.html">Free</a></li>
-                <li><a href="patrones_de_pago.html">De_Pago</a></li>
-              </ul>
-            </li>
-          </ul>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="carrito.html">Tienda</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <div class="contenedor_ppal">
-      <div class="contenedor_portada">
-        <div class="contenedor_texto">
-          <h3>Tienda de Amigurumis y Patrones para crearlos</h3>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="info.html">Acerca de</a></li>
+          <li>
+            <a href="#">Productos</a>
+            <ul>
+              <li>
+                <a href="#">Amigurumis</a>
+                <ul>
+                  <li><a href="personajes.html">Personajes</a></li>
+                  <li><a href="animales.html">Animales</a></li>
+                  <li><a href="munequeria.html">Muñequería</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Patrones</a>
+                <ul>
+                  <li><a href="patrones_free.html">Free</a></li>
+                  <li><a href="patrones_de_pago.html">De_Pago</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="contacto.html"
+              style="background: #e5c89f; color: rgb(103, 100, 100)"
+              >Contacto</a
+            >
+          </li>
+          <li><a href="carrito.html">Tienda</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+        <div class="contenedor_portada">
+          <div class="contenedor_texto">
+            <h3>Tienda de Amigurumis y Patrones para crearlos</h3>
+          </div>
         </div>
-      </div>
 
+        <div class="contenedor_sec">
+          <div class="form_texto">
+            <h3>Dejanos tus datos y nos pondremos en contacto</h3>
+          </div>
+          <!--Para el formulario se utilizó la API de Formspree (https://formspree.io/)--!-->
+          <form
+            id="form"
+            class="form"
+            action="https://formspree.io/f/xnqyranq"
+            method="POST"
+          >
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputNombre"
+              name="nombre"
+              placeholder="Escriba su nombre"
+            />
 
-      <div class="formulario">
-        <div class="form_texto">
-          <h3>Dejanos tus datos y nos pondremos en contacto</h3>
+            <label for="inputApellido" class="form-label">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputApellido"
+              name="apellido"
+              placeholder="Escriba su apellido"
+            />
+
+            <label for="inputMail" class="form-label">Mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputMail"
+              name="mail"
+              placeholder="Escriba su mail"
+            />
+
+            <label for="inputTelefono" class="form-label">Teléfono</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputTelefono"
+              name="telefono"
+              placeholder="Código de área sin 0 y número sin 15"
+            />
+
+            <label for="inputState" class="form-label"
+              >Como te enteraste de nosotros?</label
+            >
+            <select id="inputState" class="form-select" name="seleccion">
+              <option selected></option>
+              <option>Por recomendación de alguien</option>
+              <option>Por Redes Sociales</option>
+              <option>Buscando en Google</option>
+              <option>Otros</option>
+            </select>
+
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Esribinos tu consulta:</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              name="texto"
+              rows="3"
+            ></textarea>
+
+            <button type="submit" class="boton">Enviar</button>
+          </form>
         </div>
-        <!--Para el formulario se utilizó la API de Formspree (https://formspree.io/)--!-->
-        <form id="form" class="form" action="https://formspree.io/f/xnqyranq" method="POST">
 
-          <label for="inputNombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="inputNombre" name="nombre" placeholder="Escriba su nombre">
+      <footer>
+        <p class="parrafo1">Derechos&Reservados 2023</p>
+        <a href="https://www.instagram.com/vicky_gurumis/" target="_blank">
+          <img
+            src="img/Vicky_GurumiS.png"
+            alt="Instagram"
+            width="50"
+            height="50"
+        /></a>
+      </footer>
 
-          <label for="inputApellido" class="form-label">Apellido</label>
-          <input type="text" class="form-control" id="inputApellido" name="apellido" placeholder="Escriba su apellido">
-
-          <label for="inputMail" class="form-label">Mail</label>
-          <input type="email" class="form-control" id="inputMail" name="mail" placeholder="Escriba su mail">
-
-          <label for="inputTelefono" class="form-label">Teléfono</label>
-          <input type="text" class="form-control" id="inputTelefono" name="telefono"
-            placeholder="Código de área sin 0 y número sin 15">
-
-          <label for="inputState" class="form-label">Como te enteraste de nosotros?</label>
-          <select id="inputState" class="form-select" name="seleccion">
-            <option selected></option>
-            <option>Por recomendación de alguien</option>
-            <option>Por Redes Sociales</option>
-            <option>Buscando en Google</option>
-            <option>Otros</option>
-          </select>
-
-          <label for="exampleFormControlTextarea1" class="form-label">Esribinos tu consulta:</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" name="texto" rows="3"></textarea>
-
-          <button type="submit" class="boton">Enviar</button>
-
-        </form>
-      </div>
-    </div>
-
-    <footer>
-      <p class="parrafo1">Derechos&Reservados 2023</p>
-      <a href="https://www.instagram.com/vicky_gurumis/" target="_blank">
-        <img src="img/Vicky_GurumiS.png" alt="Instagram" width="50" height="50" /></a>
-    </footer>
-
-    <script src="JS/contactos.js"></script>
-
-  </main>
-</body>
-
+      <script src="JS/contactos.js"></script>
+    </main>
+  </body>
 </html>
