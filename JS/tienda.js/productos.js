@@ -2,31 +2,31 @@ const productos = [
     { 
         id: 1, 
         nombre: "Ciguena", 
-        precio: 4000, 
+        precio: 5000, 
         img: "./img/carrito/ciguena.png" 
     },
     {
         id: 2,
         nombre: "Muneca Dulce",
-        precio: 12000,
+        precio: 15000,
         img: "./img/carrito/munecadulce.png"
     },
     {
         id: 3,
         nombre: "Combo Dino + Libro",
-        precio: 5000,
+        precio: 9000,
         img: "./img/carrito/combodino.png"
     },
     {
         id: 4,
         nombre: "Camaleon",
-        precio: 3500,
+        precio: 5500,
         img: "./img/carrito/camaleon.png"
     },
     {
         id: 5,
         nombre: "Combo Triceratops + Libro Didactico",
-        precio: 7500,
+        precio: 9000,
         img: "./img/carrito/combotriceratop.png"
     },
     {
