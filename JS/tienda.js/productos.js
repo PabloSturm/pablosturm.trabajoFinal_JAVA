@@ -32,7 +32,7 @@ const productos = [
         nombre: "Combo Triceratops + Libro Didactico",
         precio: 7500,
         img: "./img/carrito/combotriceratop.png",
-        cantidad: 1,
+        cantidad: 1
     },
     {
         id: 6,
