@@ -1,6 +1,7 @@
 const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 let carrito = [];
 
@@ -20,13 +21,27 @@ productos.forEach((product)=>{
     content.append(comprar);
 
     comprar.addEventListener("click", ()=>{
-        carrito.push({
-            id : product.id,
-            nombre : product.nombre,
-            img : product.img,
-            precio : product.precio,
-        });
-    });
 
+        const repeat = carrito.some((repeatProduct)=> repeatProduct.id === product.id);
+
+        if(repeat){
+            carrito.map((prod)=>{
+                if(prod.id === product.id){
+                    prod.cantidad++
+                }
+            });
+        }else{
+            carrito.push({
+                id : product.id,
+                nombre : product.nombre,
+                img : product.img,
+                precio : product.precio,
+                cantidad : product.cantidad, 
+            });
+        }
+        
+        carritoCounter();
+    });
+    
 });
 

@@ -1,4 +1,9 @@
 /*navbar*/
+.nav-container{
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -13,27 +18,25 @@
     font-family: 'Clicker Script', cursive;
 }
 .ver-carrito{
-    font-size: 50px;
+    font-size: 30px;
     margin-right: 20px;
     margin-top: 0.5vh;
     cursor: pointer;
 }
 
 /*estilos a las cards de los productos*/
-.contenedor_sec{
-    position: absolute;
-}
 .shop-content{
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 30px 50px 10px 50px;
-    height: auto;
+    margin: 50px 50px 10px 50px;
+    height: 300px;
     margin: auto;
 }
 .card{
-    width: 24em; 
+    width: 25em; 
+    height: 30em;
     background-color: #fff;
     margin: 1em;
     padding: 1em;
@@ -50,7 +53,7 @@
 }
 .card > img{
     width: 100%;;
-    height: 250px;
+    height: 300px;
 }
 .card > h3{
     text-align: center;
@@ -94,7 +97,6 @@
     z-index: 9;
     top: 12vh;
     scrollbar-color: none;
-    border: #784b4a 1px solid;
 }
 .modal-container::-webkit-scrollbar{
     display: none;
@@ -132,14 +134,14 @@
     text-align: center;
     padding-top: 20px; 
 }
-.finalizar-compra{
+.pagar-button{
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 15px;
     width: 200px;
     padding-left: 50px;
-    margin-top: 30px;
+    margin: 30px 0px 30px 0px;
     background-color: #784b4a;
     font-family: 'Kanit', sans-serif;
     color: #fff;
@@ -148,6 +150,21 @@
 /*Boton eliminar*/
 .delete-product{
     cursor: pointer;
+    width: 100px;
+    color: #141212;
+    background-color: #f5eadb;
+}
+/*Contador carrito*/
+.cantidad-carrito{
+    background-color: #784b4a;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
 }
 footer{
     position:relative;

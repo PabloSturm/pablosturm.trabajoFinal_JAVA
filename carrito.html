@@ -78,17 +78,17 @@
       <div class="nav-container">
         <nav class="navbar">
           <h2 class="navbar-logo"></h2>
-          <h3>Aqui encontraras productos en stock para entrega inmediata</h3>
-          <h2 class="ver-carrito" id="verCarrito">🛒</h2>
+          <h3>Tu carrito...</h3>
+          <h2 class="ver-carrito" id="verCarrito">🛒<span id="cantidadCarrito" class="cantidad-carrito"></span></h2>
         </nav>
       </div>
-      <div class="contenedor_sec">
+      
         <!--shop content-->
         <div id="shopContent" class="shop-content"></div>
 
         <!--modal container-->
         <div id="modal-container" class="modal-container"></div>
-      </div>
+      
     </main>
 
     <footer>
@@ -98,6 +98,7 @@
       /></a>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="./JS/tienda.js/productos.js"></script>
     <script src="./JS/tienda.js/main.js"></script>
     <script src="./JS/tienda.js/carrito.js"></script>
