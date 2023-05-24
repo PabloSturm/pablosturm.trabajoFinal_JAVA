@@ -13,7 +13,7 @@ async function detectSubmit(event) { //la funcion detectsubmit recibe el evento
         alert('Por favor, complete todos los campos del formulario de contacto');
         return false;
     }
-    else if(isNaN(formu.telefono)){//isNaN verifica si solo es numérico el contenido de telefono
+    else if(isNaN(formu.telefono.value)){//isNaN verifica si solo es numérico el contenido de telefono
         alert("El campo 'telefono' solo puede contener dígitos numéricos.");
         return false;
     }
