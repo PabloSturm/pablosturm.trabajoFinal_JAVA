@@ -1,175 +1,190 @@
 /*navbar*/
-.nav-container{
-    position: sticky;
-    z-index: 3;
-    top: 0;
+.nav-container {
+  width: 100%;
+  height: 100%;
+  position: sticky;
+  z-index: 3;
+  top: 0;
 }
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    height: 10vh;
-    margin-top: 30px;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  margin-top: 2rem;
 }
-.navbar h3{
-    font-size: 4REM;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    color: #784b4a;
-    font-family: 'Clicker Script', cursive;
+.navbar h3 {
+  font-size: 4rem;
+  margin-top: 5px;
+  margin-bottom: 1rem;
+  color: #784b4a;
+  font-family: "Clicker Script", cursive;
 }
-.ver-carrito{
-    font-size: 30px;
-    margin-right: 20px;
-    margin-top: 0.5vh;
-    cursor: pointer;
+.ver-carrito {
+  font-size: 30px;
+  margin-right: 20px;
+  margin-top: 0.5vh;
+  cursor: pointer;
 }
-
 /*estilos a las cards de los productos*/
-.shop-content{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 50px 50px 10px 50px;
-    height: 300px;
-    margin: auto;
+.shop-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px 50px 10px 50px;
+  height: 15rem;
+  margin: auto;
 }
-.card{
-    width: 25em; 
-    height: 30em;
-    background-color: #fff;
-    margin: 1em;
-    padding: 1em;
-    border-radius: 0.5em;
-    overflow: hidden;
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.3) ;
-    cursor: default;
-    transition: all 400ms ease;
+.card {
+  width: 25em;
+  height: 30em;
+  background-color: #fff;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  cursor: default;
+  transition: all 400ms ease;
 }
-.card:hover{
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.8);
-    transform: translateY(-2%);
-    transform: scale(1.15);
+.card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+  transform: translateY(-2%);
+  transform: scale(1.15);
 }
-.card > img{
-    width: 100%;;
-    height: 300px;
+.card > img {
+  width: 100%;
+  height: 300px;
 }
-.card > h3{
-    text-align: center;
-    font-family: 'Kanit', sans-serif;
+.card > h3 {
+  text-align: center;
+  font-family: "Kanit", sans-serif;
 }
-.price{
-    color: #141212;
-    font-size: 22px;
-    text-align: center;
+.price {
+  color: #141212;
+  font-size: 22px;
+  text-align: center;
 }
-.card button{
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: #784b4a;
-    background-color: #f5eadb;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: #784b4a;
+  background-color: #f5eadb;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
 }
-.card button:hover{
-    opacity: 0.7;
-    background-color: #784b4a;
-    color: #f5eadb;
+.card button:hover {
+  opacity: 0.7;
+  background-color: #784b4a;
+  color: #f5eadb;
 }
-
 /*modal-content*/
-.modal-container{
-    width: 80%;
-    margin: 5% 10%;
-    max-height: 70vh;
-    color: #784b4a ;
-    background-color: #f5eadb;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*para arriba*/
-    position: fixed;
-    overflow: auto;
-    z-index: 9;
-    top: 12vh;
-    scrollbar-color: none;
+.modal-container {
+  width: 80%;
+  margin: 5% 10%;
+  max-height: 70vh;
+  color: #784b4a;
+  background-color: #f5eadb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*para arriba*/
+  position: fixed;
+  overflow: auto;
+  z-index: 9;
+  top: 12vh;
+  scrollbar-color: none;
 }
-.modal-container::-webkit-scrollbar{
-    display: none;
+.modal-container::-webkit-scrollbar {
+  display: none;
 }
-.modal-header{
-    display: flex;
-    justify-content: space-around;
-    background-color: #784b4a;
-    color: #fff;
-    width: 100%;
+.modal-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #784b4a;
+  color: #fff;
+  width: 100%;
 }
-.modal-header-title{
-    justify-self: start;
-    font-family: 'Kanit', sans-serif;
+.modal-header-title {
+  justify-self: start;
+  font-family: "Kanit", sans-serif;
 }
-.modal-header-button{
-    cursor: pointer;
+.modal-header-button {
+  cursor: pointer;
 }
-.modal-container > .modal-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 70%;
-    margin: 10px;
-    font-family: 'Kanit', sans-serif;
+.modal-container > .modal-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin: 10px;
+  font-family: "Kanit", sans-serif;
 }
-.modal-container > div > img{
-    height: 120px;
-    width: 120px;
+.modal-container > div > img {
+  height: 120px;
+  width: 120px;
 }
-.total-content{
-    font-size: 25px;
-    padding: 20px;
-    text-align: center;
-    padding-top: 20px; 
+.total-content {
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+  padding-top: 20px;
 }
-.pagar-button{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 15px;
-    width: 200px;
-    padding-left: 50px;
-    margin: 30px 0px 30px 0px;
-    background-color: #784b4a;
-    font-family: 'Kanit', sans-serif;
-    color: #fff;
+.pagar-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  width: 200px;
+  padding-left: 50px;
+  margin: 30px 0px 30px 0px;
+  background-color: #784b4a;
+  font-family: "Kanit", sans-serif;
+  color: #fff;
 }
-
 /*Boton eliminar*/
-.delete-product{
-    cursor: pointer;
-    width: 100px;
-    color: #141212;
-    background-color: #f5eadb;
+.delete-product {
+  cursor: pointer;
+  width: 100px;
+  color: #141212;
+  background-color: #f5eadb;
 }
 /*Contador carrito*/
-.cantidad-carrito{
-    background-color: #784b4a;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 12px;
-    padding: 4px;
-    top: 37px;
-    right: 14px;
-    position: absolute;
-    display: none;
+.cantidad-carrito {
+  background-color: #784b4a;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 4px;
+  top: 37px;
+  right: 14px;
+  position: absolute;
+  display: none;
 }
-footer{
-    position:relative;
-    top: 1050px;
-    width: 100%;
-    height: 75px;
-    background: linear-gradient(to right, rgb(239, 192, 159), rgb(138, 107, 84));
+footer {
+  top: 1400px;
+  width: 100%;
+  height: 75px;
+  background: linear-gradient(to right, rgb(239, 192, 159), rgb(138, 107, 84));
+}
+/* ================ responsive ==============*/
+@media screen and (max-width: 1730px) {
+  footer {
+    top: 1850px;
+  }
+}
+@media screen and (max-width: 1295px) {
+  footer {
+    top: 2350px;
+  }
+}
+@media screen and (max-width: 863px) {
+  footer {
+    top: 3900px;
+  }
 }

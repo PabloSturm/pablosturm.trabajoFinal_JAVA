@@ -1,255 +1,250 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Kanit', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
 }
-body, header, main, footer {
-    max-width: 1800px;
-    min-height: 50px;
-    min-width: 450px;
-    background: rgb(254, 248, 239);
+body,header,main,footer {
+  max-width: 2000px;
+  min-height: 50px;
+  min-width: 450px;
+  background: rgb(254, 248, 239);
 }
 /*encabezado*/
-header{
+header {
+  width: 100%;
+  height: 157px;
+  background: #f5eadb;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+.img_logo {
+  width: 150px;
+  margin-left: 5%;
+  padding: 10px;
+}
+#nombre {
+  font-family: "Clicker Script", cursive;
+  font-size: 4rem;
+  font-weight: bold;
+  position: fixed;
+  color: #784b4a;
+  margin-top: 50px;
+  margin-left: 40px;
+}
+/* menues y submenues*/
+.menu {
+  width: auto;
+  float: right;
+  margin-top: 115px;
+  margin-right: 2%;
+}
+.menu a {
+  padding: 15px;
+  text-decoration: none;
+  color: #784b4a;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  transition: 0.4s;
+}
+.menu a:hover {
+  color: rgb(239, 192, 159);
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.menu li {
+  position: relative;
+}
+.menu li ul {
+  position: absolute;
+}
+/*primer nivel menu*/
+.menu > ul {
+  display: table;
+  width: 100%;
+}
+.menu > ul > li {
+  float: left;
+}
+/*segundo nivel menu*/
+.menu li li {
+  background: #f5eadb;
+  max-height: 0;
+  transition: all 0.4s;
+  overflow: hidden;
+  width: 120px;
+}
+.menu li:hover > ul > li {
+  max-height: 500px;
+  overflow: visible;
+}
+.menu > ul > li > ul {
+  top: 78%;
+}
+/* tercer nivel menu*/
+.menu ul ul ul {
+  top: 0;
+  left: 100%;
+}
+#check {
+  display: none;
+}
+.icon_menu {
+  display: none;
+}
+#check:checked ~ .menu {
+  height: 180px;
+}
+/* ================================ CUERPO PRINCIPAL ================================================*/
+main {
+  position: relative;
+  top: 150px;
+}
+footer {
+  position: absolute;
+  width: 100%;
+  height: 75px;
+  background: linear-gradient(to right, rgb(239, 192, 159), rgb(138, 107, 84));
+}
+audio {
+  position: fixed;
+  top: 4%;
+  right: 7%;
+}
+/* ================ responsive ==============*/
+@media screen and (max-width: 1300px) {
+  .contenedor_texto h3 {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 950px) {
+  .icon_menu {
+    display: block;
+    color: chocolate;
+    float: right;
+    padding: 3px;
+    font-size: 24px;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    margin-top: 115px;
+    margin-right: 5%;
+  }
+  .icon_menu:hover {
+    background: rgb(240, 216, 171);
+    cursor: pointer;
+  }
+  .menu {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 25%;
+    text-align: right;
+    display: none;
+    background: #f5eadb;
+  }
+  .menu ul li {
     width: 100%;
-    height: 157px;
-    background:#f5eadb;
-    position: fixed;
-    z-index: 10;
+  }
+  .menu ul li a {
+    width: 100%;
+    padding: 8px 10px;
+  }
+  .menu ul li ul {
+    position: relative;
+    width: 80%;
     top: 0;
+    left: 10%;
+  }
+  .menu ul li ul li ul {
+    position: relative;
+    width: 60%;
+    left: 10%;
+  }
+  #check:checked ~ .menu {
+    display: block;
+  }
+  audio {
+    display: none;
+  }
 }
-.img_logo{
-    width: 150px;
-    margin-left: 5%;
-    padding: 10px;
-}
-#nombre{
-    font-family: 'Clicker Script', cursive;
-    font-size: 4rem;
+
+@media screen and (max-width: 700px) {
+  .img_logo {
+    width: 120px;
+    margin-left: 4%;
+    padding: 8px;
+  }
+  #nombre {
+    font-family: "Clicker Script", cursive;
+    font-size: 3rem;
     font-weight: bold;
     position: fixed;
     color: #784b4a;
-    margin-top: 50px;
-    margin-left: 40px;
-}
-
-/* menues y submenues*/
-.menu{
-    width: auto;
-    float: right;
-    margin-top: 115px;
-    margin-right: 2%;
-}
-.menu a{
-    padding: 15px;
-    text-decoration: none;
-    color:#784b4a;
-    font-size: 1rem;
-    font-weight: bold;
-    display: flex;
-    transition: .4s;
-}
-.menu a:hover{
-    color:rgb(239, 192, 159);
-}
-.menu ul{
-    list-style: none;
-    padding:0;
-    display: flex;
-    flex-direction: column;
-}
-.menu li{
-    position: relative;
-}
-.menu li ul{
-    position: absolute;
-}
-
-/*primer nivel menu*/
-.menu >ul{
-    display: table;
+    margin-top: 30px;
+    margin-left: 8px;
+  }
+  header {
     width: 100%;
-}
-.menu > ul > li{
-    float:left;
-}
-
-/*segundo nivel menu*/
-.menu li li{
+    height: 130px;
     background: #f5eadb;
-    max-height: 0;
-    transition: all .4s;
-    overflow: hidden;
-    width: 120px;
-}
-.menu li:hover>ul>li{
-    max-height: 500px;
-    overflow: visible;
-}
-.menu>ul>li>ul{
-top: 78%;
-}
-/* tercer nivel menu*/
-.menu ul ul ul{
-    top:0;
-    left: 100%;
-}
-
-#check{
+    position: fixed;
+    z-index: 10;
+  }
+  .icon_menu {
+    display: block;
+    color: chocolate;
+    float: right;
+    padding: 3px;
+    font-size: 18px;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    margin-top: 95px;
+  }
+  .icon_menu:hover {
+    background: rgb(240, 216, 171);
+    cursor: pointer;
+  }
+  .menu {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 12%;
+    text-align: right;
     display: none;
-}
-.icon_menu{
-    display: none;
-}
-
-#check:checked ~ .menu{
-    height: 180px;
-}
-
-/* ================================ CUERPO PRINCIPAL ================================================*/
-
-main{
-    position: relative;
-    top: 150px;
-
-}
-footer{
-    position:absolute;
+    background: #f5eadb;
+  }
+  .menu ul li {
     width: 100%;
-    height: 75px;
-    background: linear-gradient(to right, rgb(239, 192, 159), rgb(138, 107, 84));
-}
-
-/* ================ responsive ==============*/
-
-
-@media screen and (max-width:950px){
-    .icon_menu{
-        display: block;
-        color: chocolate;
-        float:right;
-        padding: 3px;
-        font-size: 24px;
-        border: 1px solid #7a7a7a;
-        border-radius: 5px;
-        margin-top: 115px;
-        margin-right: 20px;
-    }
-    .icon_menu:hover{
-        background: rgb(240, 216, 171);
-        cursor:pointer;
-    }
-    .menu{
-        width: auto;
-        height: auto;
-        position: absolute;
-        top: 25%;
-        text-align: right;
-        display: none;
-        background:#f5eadb;
-    }
-
-    .menu ul li {
-        width: 100%;
-    }
-    .menu ul li a{
-        width: 100%;
-        padding: 8px 10px;
-    }
-    .menu ul li ul{
-        position:relative;
-        width: 80%;
-        top:0;
-        left: 10%;
-    }
-
-    .menu ul li ul li ul{
-        position:relative;
-        width:60%;
-        left: 10%;
-    }
-
-    #check:checked ~ .menu{
-        display: block;
-    }
-}
-
-@media screen and (max-width:600px){
-    .img_logo{
-        width: 120px;
-        margin-left: 4%;
-        padding: 8px;
-    }
-    #nombre{
-        font-family: 'Clicker Script', cursive;
-        font-size: 3rem;
-        font-weight: bold;
-        position: fixed;
-        color: #784b4a;
-        margin-top: 30px;
-        margin-left: 8px;
-    }
-    header{
-        width: 100%;
-        height: 130px;
-        background:#f5eadb;
-        position: fixed;
-        z-index: 10;
-    }
-    .icon_menu{
-        display: block;
-        color: chocolate;
-        float:right;
-        padding: 3px;
-        font-size: 18px;
-        border: 1px solid #7a7a7a;
-        border-radius: 5px;
-        margin-top: 95px;
-        margin-right: 10px;
-    }
-    .icon_menu:hover{
-        background: rgb(240, 216, 171);
-        cursor:pointer;
-    }
-
-    .menu{
-        width: auto;
-        height: auto;
-        position: absolute;
-        top: 12%;
-        text-align: right;
-        display: none;
-        background:#f5eadb;
-    }
-
-    .menu ul li {
-        width: 100%;
-    }
-    .menu ul li a{
-        font-size: 14px;
-        width: 100%;
-        padding: 8px 10px;
-    }
-    .menu ul li ul{
-        position:relative;
-        width: 80%;
-        top:0;
-        left: 10%;
-    }
-
-    .menu ul li ul li ul{
-        position:relative;
-        width:60%;
-        left: 10%;
-    }
-
-    #check:checked ~ .menu{
-        display: block;
-    }
-    main{
-        top: 125px;
-    }
-
-   
+  }
+  .menu ul li a {
+    font-size: 14px;
+    width: 100%;
+    padding: 8px 10px;
+  }
+  .menu ul li ul {
+    position: relative;
+    width: 80%;
+    top: 0;
+    left: 10%;
+  }
+  .menu ul li ul li ul {
+    position: relative;
+    width: 60%;
+    left: 10%;
+  }
+  #check:checked ~ .menu {
+    display: block;
+  }
+  main {
+    top: 125px;
+  }
+  .contenedor_texto h3 {
+    font-size: 2.5rem;
+  }
 }

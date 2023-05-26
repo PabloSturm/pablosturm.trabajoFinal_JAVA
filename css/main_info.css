@@ -1,42 +1,62 @@
 /* ============== cuerpo ========== */
-
-.contenedor_ppal{
+.contenedor_ppal {
   width: 100%;
   background-color: rgb(254, 248, 239);
 }
-
-.contenedor_portada{
+.contenedor_portada {
   width: 100%;
-  height: 200px;
+  height: 7rem;
 }
-.contenedor_texto{
+.contenedor_texto {
   position: absolute;
   width: 100%;
   margin: 5% 3%;
   text-align: center;
 }
-.contenedor_texto h3{
+.contenedor_texto h3 {
   color: rgb(66, 43, 7);
   font-size: 5rem;
   font-weight: bold;
-  font-family: 'Clicker Script', cursive;
+  font-family: "Clicker Script", cursive;
 }
-
 /*items del cuerpo principal*/
-.contenedor_sec{
+.contenedor_sec {
   width: 100%;
   background-color: rgb(254, 248, 239);
   padding: 40px;
 }
-.contenedor_detalle{
+.contenedor_detalle {
   width: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.item{
+.item {
   width: 80%;
   text-align: center;
   margin: 20px;
+}
+/* ================ responsive ==============*/
+@media screen and (max-width: 1300px) {
+  .contenedor_texto h3 {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 950px) {
+  .contenedor_texto h3 {
+    font-size: 2.5rem;
+  }
+  .contenedor_portada {
+    height: auto;
+    padding: 25px 5px;
+  }
+  .contenedor_texto {
+    margin: 2% 1%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .contenedor_texto h3 {
+    font-size: 2rem;
+  }
 }

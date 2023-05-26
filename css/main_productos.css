@@ -1,88 +1,109 @@
 /* ============== cuerpo ========== */
-.contenedor_portada{
+.contenedor_portada {
   width: 100%;
-  height: 200px;
+  height: 150px;
   background-color: rgb(254, 248, 239);
 }
-.contenedor_texto{
+.contenedor_texto {
   position: absolute;
   width: 100%;
   margin: 5% 3%;
   text-align: center;
 }
-.contenedor_texto h3{
+.contenedor_texto h3 {
   color: rgb(66, 43, 7);
   font-size: 5rem;
   font-weight: bold;
-  font-family: 'Clicker Script', cursive;
+  font-family: "Clicker Script", cursive;
 }
-
-.contenedor_sec{
+.contenedor_sec {
   width: 100%;
-    background-color: rgb(254, 248, 239);
-    padding: 40px;
+  background-color: rgb(254, 248, 239);
+  padding: 40px;
 }
-.contenedor_tarjeta{
+.contenedor_tarjeta {
   width: 100%;
-  display:flex;
-  flex-direction:row;
-  flex-wrap: wrap;  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   background-color: rgb(254, 248, 239);
   padding: 15px 10px 15px 10px;
 }
-
-.tarjeta{
-  width: 24em; 
+.tarjeta {
+  width: 24em;
   background-color: #fff;
   margin: 1em;
   padding: 1em;
   border-radius: 0.5em;
   border: #666 thin solid;
   overflow: hidden;
-  box-shadow: 0px 1px 10px rgba(0,0,0,0.3) ;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
   cursor: default;
   transition: all 400ms ease;
 }
-
-.tarjeta:hover{
-  box-shadow: 5px 5px 20px rgba(0,0,0,0.8);
+.tarjeta:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
   transform: translateY(-2%);
   transform: scale(1.15);
 }
-
-.marcoTarjeta{
-  padding: .8em;
+.marcoTarjeta {
+  padding: 0.8em;
   border-radius: 0.5em;
 }
-
-.marcoTarjeta img{ 
-  width:100%;
+.marcoTarjeta img {
+  width: 100%;
   border-radius: 0.5em 0.5em;
 }
-
-.textoTarjeta{
+.textoTarjeta {
   background-color: #fff;
-  padding: .8em;
-  border-radius: 0 0 .5em .5em;
+  padding: 0.8em;
+  border-radius: 0 0 0.5em 0.5em;
   margin: 0.2em 0 0 0;
 }
-
-.textoTarjeta h2{
+.textoTarjeta h2 {
   font-size: 2em;
 }
-.textoTarjeta p{
+.textoTarjeta p {
   line-height: 1.5;
   font-size: 2em;
 }
-.art{
+.art {
   text-align: center;
 }
-.precio{
+.precio {
   text-align: right;
 }
-.textoTarjeta h3{
+.textoTarjeta h3 {
   text-align: left;
   font-size: 1.5em;
-
+}
+/* ================ responsive ==============*/
+@media screen and (max-width: 1300px) {
+  .contenedor_texto h3 {
+    font-size: 3.5rem;
+  }
+  .contenedor_portada {
+    height: auto;
+    padding: 0px 5px 100px 5px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .contenedor_texto h3 {
+    font-size: 2.5rem;
+  }
+  .contenedor_portada {
+    padding: 0px 5px 50px 5px;
+  }
+  .contenedor_texto {
+    margin: 2% 1%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .contenedor_portada {
+    padding: 0px 5px 20px 5px;
+  }
+  .contenedor_texto h3 {
+    font-size: 2rem;
+  }
 }

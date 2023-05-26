@@ -1,35 +1,32 @@
 /* ============== cuerpo ========== */
-
-.contenedor_ppal{
+.contenedor_ppal {
   width: 100%;
+  margin: auto;
 }
-
-.contenedor_carrousel{
+.contenedor_carrousel {
   background: linear-gradient(to right, rgb(239, 192, 159), rgb(138, 107, 84));
-  height:60vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-
-.contenedor_imagenes{
+.contenedor_imagenes {
   position: relative;
   width: 225px;
   height: 250px;
   transform-style: preserve-3d;
   animation: rotate 35s linear infinite;
 }
-
 @keyframes rotate {
-  0%{
+  0% {
     transform: perspective(1000px) rotateY(0deg);
   }
-  100%{
+  100% {
     transform: perspective(1000px) rotateY(360deg);
   }
-} 
-.contenedor_imagenes span{
+}
+.contenedor_imagenes span {
   position: absolute;
   top: 0;
   left: 0;
@@ -37,14 +34,12 @@
   height: 100%;
   transform-origin: center;
   transform-style: preserve-3d;
-  transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
 }
-
-.contenedor_imagenes span:hover img{
+.contenedor_imagenes span:hover img {
   transform: translateY(-50px) scale(1.2);
 }
-
-.contenedor_imagenes img{
+.contenedor_imagenes img {
   position: absolute;
   top: 0;
   left: 0;
@@ -54,31 +49,26 @@
   object-fit: cover;
   transition: 2s;
 }
-
-.contenedor_portada{
+.contenedor_portada {
   width: 100%;
   height: auto;
   padding: 40px 25px 50px 25px;
   background-color: rgb(254, 248, 239);
 }
-
-.contenedor_texto{
+.contenedor_texto {
   left: 0;
   position: absolute;
   width: 100%;
   text-align: center;
-
 }
-.contenedor_texto h3{
+.contenedor_texto h3 {
   color: rgb(66, 43, 7);
   font-size: 5rem;
   font-weight: bold;
-  font-family: 'Clicker Script', cursive;
+  font-family: "Clicker Script", cursive;
 }
-
 /* items del cuerpo principal*/
-
-.contenedor_detalle{
+.contenedor_detalle {
   width: 100%;
   height: 100%;
   padding: 5dvi 0dvi 10dvi 0dvi;
@@ -87,58 +77,51 @@
   justify-content: center;
   background-color: rgb(254, 248, 239);
 }
-.item{
+.item {
   width: 300px;
   text-align: center;
   margin: 20px;
 }
 /* ================ responsive ==============*/
-
-@media screen and (max-width:1250px){
-  .contenedor_texto h3{
-      font-size: 3.5rem;
+@media screen and (max-width: 1300px) {
+  .contenedor_texto h3 {
+    font-size: 3.5rem;
   }
-  .contenedor_portada{
-      height: auto;
-      padding: 50px 10px;
+  .contenedor_portada {
+    height: auto;
+    padding: 50px 10px;
+  }
+  .contenedor_detalle {
+    height: 80%;
   }
 }
-
-@media screen and (max-width:860px){
-  .contenedor_carrousel{
-    height:40vh;
+@media screen and (max-width: 950px) {
+  .contenedor_carrousel {
+    height: 40vh;
   }
-  
-  .contenedor_imagenes{
+  .contenedor_imagenes {
     width: 150px;
     height: 175px;
   }
-  .contenedor_imagenes span{
-    transform: rotateY(calc(var(--i)*45deg)) translateZ(250px);
+  .contenedor_imagenes span {
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(250px);
   }
-
-  .contenedor_texto h3{
-      font-size: 3rem;
+  .contenedor_texto h3 {
+    font-size: 2.5rem;
   }
-  .contenedor_portada{
+  .contenedor_portada {
     height: auto;
     padding: 25px 5px;
   }
-  .contenedor_texto{
-      margin: 2% 1%;
+  .contenedor_texto {
+    margin: 2% 1%;
   }
 }
-
-@media screen and (max-width:750px){
-  .contenedor_detalle{
-    padding: 100px;
+@media screen and (max-width: 700px) {
+  .contenedor_detalle {
+    padding: 80px;
   }
-}
-
-@media screen and (max-width:600px){
-
-  .contenedor_texto h3{
-    font-size: 2.5rem;
+  .contenedor_texto h3 {
+    font-size: 2rem;
   }
-
 }

@@ -33,9 +33,9 @@
         ></iconify-icon>
       </label>
 
-      <!-- <audio controls autoplay>
-        <source src="audio/musica-relajante-dolphin.mp3" type="audio/mpeg">
-      </audio>  -->
+      <audio controls autoplay>
+        <source src="audio/musica-relajante-dolphin.mp3" type="audio/mpeg" />
+      </audio>
 
       <nav class="menu">
         <ul>
@@ -74,84 +74,83 @@
       </nav>
     </header>
     <main>
-
-        <div class="contenedor_portada">
-          <div class="contenedor_texto">
-            <h3>Tienda de Amigurumis y Patrones para crearlos</h3>
-          </div>
+      <div class="contenedor_portada">
+        <div class="contenedor_texto">
+          <h3>Tienda de Amigurumis y Patrones para crearlos</h3>
         </div>
+      </div>
 
-        <div class="contenedor_sec">
-          <div class="form_texto">
-            <h3>Dejanos tus datos y nos pondremos en contacto</h3>
-          </div>
-          <!--Para el formulario se utilizó la API de Formspree (https://formspree.io/)--!-->
-          <form
-            id="form"
-            class="form"
-            action="https://formspree.io/f/xnqyranq"
-            method="POST"
+      <div class="contenedor_sec">
+        <div class="form_texto">
+          <h3>Dejanos tus datos y nos pondremos en contacto</h3>
+        </div>
+        <!--Para el formulario se utilizó la API de Formspree (https://formspree.io/)--!-->
+        <form
+          id="form"
+          class="form"
+          action="https://formspree.io/f/xnqyranq"
+          method="POST"
+        >
+          <label for="inputNombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputNombre"
+            name="nombre"
+            placeholder="Escriba su nombre"
+          />
+
+          <label for="inputApellido" class="form-label">Apellido</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputApellido"
+            name="apellido"
+            placeholder="Escriba su apellido"
+          />
+
+          <label for="inputMail" class="form-label">Mail</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputMail"
+            name="mail"
+            placeholder="Escriba su mail"
+          />
+
+          <label for="inputTelefono" class="form-label">Teléfono</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputTelefono"
+            name="telefono"
+            placeholder="Código de área sin 0 y número sin 15"
+          />
+
+          <label for="inputState" class="form-label"
+            >Cómo te enteraste de nosotros?</label
           >
-            <label for="inputNombre" class="form-label">Nombre</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputNombre"
-              name="nombre"
-              placeholder="Escriba su nombre"
-            />
+          <select id="inputState" class="form-select" name="seleccion">
+            <option selected></option>
+            <option>Por recomendación de alguien</option>
+            <option>Por Redes Sociales</option>
+            <option>Buscando en Google</option>
+            <option>Otros</option>
+          </select>
 
-            <label for="inputApellido" class="form-label">Apellido</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputApellido"
-              name="apellido"
-              placeholder="Escriba su apellido"
-            />
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Escribinos tu consulta:</label
+          >
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            name="texto"
+            rows="3"
+          ></textarea>
 
-            <label for="inputMail" class="form-label">Mail</label>
-            <input
-              type="email"
-              class="form-control"
-              id="inputMail"
-              name="mail"
-              placeholder="Escriba su mail"
-            />
-
-            <label for="inputTelefono" class="form-label">Teléfono</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputTelefono"
-              name="telefono"
-              placeholder="Código de área sin 0 y número sin 15"
-            />
-
-            <label for="inputState" class="form-label"
-              >Cómo te enteraste de nosotros?</label
-            >
-            <select id="inputState" class="form-select" name="seleccion">
-              <option selected></option>
-              <option>Por recomendación de alguien</option>
-              <option>Por Redes Sociales</option>
-              <option>Buscando en Google</option>
-              <option>Otros</option>
-            </select>
-
-            <label for="exampleFormControlTextarea1" class="form-label"
-              >Escribinos tu consulta:</label
-            >
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              name="texto"
-              rows="3"
-            ></textarea>
-
-            <button type="submit" class="boton">Enviar</button>
-          </form>
-        </div>
+          <button type="submit" class="boton">Enviar</button>
+        </form>
+      </div>
 
       <footer>
         <p class="parrafo1">Derechos&Reservados 2023</p>
