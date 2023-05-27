@@ -112,10 +112,10 @@ footer {
   height: 75px;
   background: linear-gradient(to right, rgb(239, 192, 159), rgb(138, 107, 84));
 }
-audio {
+.spoty {
   position: fixed;
-  top: 4%;
-  right: 7%;
+  top: 2%;
+  right: 3%;
 }
 /* ================ responsive ==============*/
 @media screen and (max-width: 1300px) {
@@ -169,7 +169,7 @@ audio {
   #check:checked ~ .menu {
     display: block;
   }
-  audio {
+  .spoty {
     display: none;
   }
 }
