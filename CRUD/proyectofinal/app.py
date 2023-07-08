@@ -16,41 +16,46 @@ class Producto(db.Model):
     def __init__(self, tipo):
         self.tipo = tipo
  
-# class Amigurumi(db.Model):
-#     __tablename__ = 'amigurumi'
-#     idamigurumi = db.Column(db.Integer, primary_key=True)
-#     idproducto = db.Column(db.Integer, db.ForeignKey('producto.idproducto'))
-#     codigo = db.Column(db.Integer, nullable=False)
-#     nombre = db.Column(db.String(20), nullable=False)
-#     descripcion = db.Column(db.String(100))
-#     precio = db.Column(db.Float)
-#     stock = db.Column(db.Integer)
+class Amigurumi(db.Model):
+    __tablename__ = 'amigurumi'
+    idamigurumi = db.Column(db.Integer, primary_key=True)
+    idproducto = db.Column(db.Integer, db.ForeignKey('producto.idproducto'))
+    codigo = db.Column(db.Integer, nullable=False)
+    nombre = db.Column(db.String(20), nullable=False)
+    descripcion = db.Column(db.String(100))
+    precio = db.Column(db.Float)
+    stock = db.Column(db.Integer)  
+    imagen = db.Column(db.String(255))
 
-#     def __init__(self, idproducto, codigo, nombre, descripcion, precio, stock, imagen):
-#         self.idproducto = idproducto
-#         self.codigo = codigo
-#         self.nombre = nombre
-#         self.descripcion = descripcion
-#         self.precio = precio
-#         self.stock = stock
+    def __init__(self, idproducto, codigo, nombre, descripcion, precio, stock, imagen):
+        self.idproducto = idproducto
+        self.codigo = codigo
+        self.nombre = nombre
+        self.descripcion = descripcion
+        self.precio = precio
+        self.stock = stock
+        self.imagen = imagen
 
-# class Patron(db.Model):
-#     __tablename__ = 'patron'
-#     idpatron = db.Column(db.Integer, primary_key=True)
-#     idproducto = db.Column(db.Integer, db.ForeignKey('producto.idproducto'))
-#     codigo = db.Column(db.Integer, nullable=False)
-#     nombre = db.Column(db.String(20), nullable=False)
-#     descripcion = db.Column(db.String(100))
-#     precio = db.Column(db.Float)
-#     stock = db.Column(db.Integer)  # Corregido el tipo de dato
 
-#     def __init__(self, idproducto, codigo, nombre, descripcion, precio, stock, imagen):
-#         self.idproducto = idproducto
-#         self.codigo = codigo
-#         self.nombre = nombre
-#         self.descripcion = descripcion
-#         self.precio = precio
-#         self.stock = stock
+class Patron(db.Model):
+    __tablename__ = 'patron'
+    idpatron = db.Column(db.Integer, primary_key=True)
+    idproducto = db.Column(db.Integer, db.ForeignKey('producto.idproducto'))
+    codigo = db.Column(db.Integer, nullable=False)
+    nombre = db.Column(db.String(20), nullable=False)
+    descripcion = db.Column(db.String(100))
+    precio = db.Column(db.Float)
+    stock = db.Column(db.Integer)
+    imagen = db.Column(db.String(255))
+
+    def __init__(self, idproducto, codigo, nombre, descripcion, precio, stock, imagen):
+        self.idproducto = idproducto
+        self.codigo = codigo
+        self.nombre = nombre
+        self.descripcion = descripcion
+        self.precio = precio
+        self.stock = stock
+        self.imagen = imagen
 
 class Pedido(db.Model):
     __tablename__ = 'pedido'
