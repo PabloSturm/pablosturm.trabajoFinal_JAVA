@@ -1,11 +1,19 @@
 import mysql.connector
-from conexion import DatabaseConnection, app, db, ma, Amigurumi, Patron
 from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
-#En este bloque se importa la clase Flask del módulo flask y las clases Amigurumi y Patron, junto con los esquemas amigurumis_schema y patrones_schema del módulo conexion. Además, se importa la instancia de la aplicación Flask y la base de datos db.
+# instancia de la aplicación Flask
+app = Flask(__name__)
 CORS(app)
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Delfines/2'
+app.config['MYSQL_DATABASE_DB'] = 'tienda_vicky_gurumis'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Delfines/2@localhost/tienda_vicky_gurumis'
+
+db = SQLAlchemy(app)
+ma = Marshmallow(app)
 
 
 class Producto(db.Model):
@@ -150,6 +158,7 @@ clientes_schema = ClienteSchema(many=True)
 facturas_schema = FacturaSchema(many=True)
 
 
+
 @app.route('/producto', methods=['GET'])
 def get_producto():
     all_productos = Producto.query.all()
@@ -190,15 +199,12 @@ def get_factura():
 
 if __name__ == '__main__':
     with app.app_context():
-        #  colocar código que interactúa con la base de datos u otras funcionalidades de Flask
-
+        db.create_all() 
+        
         # Ejemplo 1: Consulta a la base de datos
         all_productos = Producto.query.all()
         # Realiza operaciones con los datos obtenidos de la base de datos
-
-        # Ejemplo 2: Iniciar el servidor Flask
-        app.run(debug=True)
-
-
-    
+        
+    # Ejemplo 2: Iniciar el servidor Flask
+    app.run(debug=True)
 #Esta parte del código asegura que el servidor Flask se ejecute solo cuando el script se ejecuta directamente (no cuando se importa como un módulo). Dentro de if __name__ == '__main__':, se crea la estructura de la base de datos utilizando db.create_all() y luego se inicia la aplicación Flask utilizando app.run(debug=True).
