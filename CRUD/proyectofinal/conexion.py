@@ -1,12 +1,12 @@
 import mysql.connector
-from flask import Flask, request, render_template
+from flask import Flask
 from flaskext.mysql import MySQL
 
 # instancia de la aplicación Flask
 app = Flask(__name__)
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = '****'
+app.config['MYSQL_DATABASE_PASSWORD'] = '***'
 app.config['MYSQL_DATABASE_DB'] = 'tienda_vicky_gurumis'
 mysql = MySQL(app)
 
@@ -26,3 +26,12 @@ class DatabaseConnection:
         if self.connection:
             self.connection.close()
             print("Conexión cerrada.")
+            
+# Crear una instancia de DatabaseConnection
+db_connection = DatabaseConnection()
+
+# Llamar al método connect() para establecer la conexión
+db_connection.connect()
+
+# Cerrar la conexión a la base de datos
+#db_connection.close()
