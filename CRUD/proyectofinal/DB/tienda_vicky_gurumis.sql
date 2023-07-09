@@ -31,6 +31,8 @@ CREATE TABLE `amigurumi` (
   `nombre` varchar(20) NOT NULL,
   `descripcion` varchar(100) DEFAULT NULL,
   `precio` double DEFAULT NULL,
+  `stock` int DEFAULT NULL,
+  `imagen` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idamigurumi`),
   KEY `idproducto` (`idproducto`),
   CONSTRAINT `amigurumi_ibfk_1` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`idproducto`)
@@ -115,6 +117,8 @@ CREATE TABLE `patron` (
   `nombre` varchar(20) NOT NULL,
   `descripcion` varchar(100) DEFAULT NULL,
   `precio` double DEFAULT NULL,
+  `stock` int DEFAULT NULL,
+  `imagen` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idpatron`),
   KEY `idproducto` (`idproducto`),
   CONSTRAINT `patron_ibfk_1` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`idproducto`)
@@ -195,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-07 20:44:03
+-- Dump completed on 2023-07-08 22:14:09
