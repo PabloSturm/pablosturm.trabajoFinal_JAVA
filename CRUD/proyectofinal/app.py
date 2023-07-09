@@ -1,11 +1,12 @@
 import mysql.connector
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
-# instancia de la aplicación Flask
+
 app = Flask(__name__)
 CORS(app)
+
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'Delfines/2'
@@ -15,7 +16,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Delfines/2@localho
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
-
 class Producto(db.Model):
     __tablename__ = 'producto'
     idproducto = db.Column(db.Integer, primary_key=True)
@@ -23,7 +23,8 @@ class Producto(db.Model):
 
     def __init__(self, tipo):
         self.tipo = tipo
- 
+
+
 class Amigurumi(db.Model):
     __tablename__ = 'amigurumi'
     idamigurumi = db.Column(db.Integer, primary_key=True)
@@ -32,7 +33,7 @@ class Amigurumi(db.Model):
     nombre = db.Column(db.String(20), nullable=False)
     descripcion = db.Column(db.String(100))
     precio = db.Column(db.Float)
-    stock = db.Column(db.Integer)  
+    stock = db.Column(db.Integer)
     imagen = db.Column(db.String(255))
 
     def __init__(self, idproducto, codigo, nombre, descripcion, precio, stock, imagen):
@@ -65,6 +66,7 @@ class Patron(db.Model):
         self.stock = stock
         self.imagen = imagen
 
+
 class Pedido(db.Model):
     __tablename__ = 'pedido'
     idpedido = db.Column(db.Integer, primary_key=True)
@@ -85,6 +87,7 @@ class Pedido(db.Model):
         self.fecha_pedido = fecha_pedido
         self.estado_pedido = estado_pedido
 
+
 class Cliente(db.Model):
     __tablename__ = 'cliente'
     idcliente = db.Column(db.Integer, primary_key=True)
@@ -104,6 +107,7 @@ class Cliente(db.Model):
         self.direccion = direccion
         self.email = email
         self.password = password
+
 
 class Factura(db.Model):
     __tablename__ = 'factura'
@@ -126,22 +130,27 @@ class AmigurumiSchema(ma.Schema):
         model = Amigurumi
         fields = ('idamigurumi', 'idproducto', 'codigo', 'nombre', 'descripcion', 'precio', 'stock', 'imagen')
 
+
 class PatronSchema(ma.Schema):
     class Meta:
         model = Patron
         fields = ('idpatron', 'idproducto', 'codigo', 'nombre', 'descripcion', 'precio', 'stock', 'imagen')
 
+
 class PedidoSchema(ma.Schema):
     class Meta:
         model = Pedido
+
 
 class ClienteSchema(ma.Schema):
     class Meta:
         model = Cliente
 
+
 class FacturaSchema(ma.Schema):
     class Meta:
         model = Factura
+
 
 producto_schema = ProductoSchema()
 amigurumi_schema = AmigurumiSchema()
@@ -157,6 +166,20 @@ pedidos_schema = PedidoSchema(many=True)
 clientes_schema = ClienteSchema(many=True)
 facturas_schema = FacturaSchema(many=True)
 
+# Rutas
+
+#**************productos*********************
+
+@app.route("/producto", methods=["POST"])
+def create_producto():
+    tipo = request.json["tipo"]
+
+    new_producto = Producto(tipo)
+
+    db.session.add(new_producto)
+    db.session.commit()
+
+    return producto_schema.jsonify(new_producto)
 
 
 @app.route('/producto', methods=['GET'])
@@ -165,25 +188,147 @@ def get_producto():
     result = productos_schema.dump(all_productos)
     return jsonify(result)
 
+@app.route("/producto/<id>", methods=["PUT"])
+def update_producto(id):
+    producto = Producto.query.get(id)
+    if producto:
+        producto.tipo = request.json["tipo"]
+        db.session.commit()
+        return jsonify({"message": "Producto actualizado correctamente"})
+    else:
+        return jsonify({"message": "Producto no encontrado"}), 404
+
+
+@app.route("/producto/<id>", methods=["DELETE"])
+def delete_producto(id):
+    producto = Producto.query.get(id)
+
+    if producto:
+        db.session.delete(producto)
+        db.session.commit()
+        return jsonify({"message": "Producto eliminado correctamente"})
+    else:
+        return jsonify({"message": "Producto no encontrado"}), 404
+
+
+#**************Amigurumis********************
+
+@app.route("/amigurumi", methods=["POST"])
+def create_amigurumi():
+    idproducto = request.json["idproducto"]
+    codigo = request.json["codigo"]
+    nombre = request.json["nombre"]
+    descripcion = request.json["descripcion"]
+    precio = request.json["precio"]
+    stock = request.json["stock"]
+    imagen = request.json["imagen"]
+    new_amigurumi = Amigurumi(idproducto, codigo, nombre, descripcion, precio, stock, imagen)
+
+    db.session.add(new_amigurumi)
+    db.session.commit()
+
+    return amigurumi_schema.jsonify(new_amigurumi)
+
 @app.route('/amigurumi', methods=['GET'])
 def get_amigurumi():
     all_amigurumi = Amigurumi.query.all()
     result = amigurumis_schema.dump(all_amigurumi)
     return jsonify(result)
-# Esta función decorada con @app.route('/amigurumi', methods=['GET']) define una ruta '/amigurumi' con el método GET. Cuando se accede a esta ruta, se ejecuta la función get_amigurumi(). Dentro de esta función, se realiza una consulta a la base de datos para obtener todos los objetos Amigurumi y luego se utiliza el esquema amigurumis_schema para serializar los resultados en formato JSON.
+
+
+@app.route("/amigurumi/<id>", methods=["PUT"])
+def update_amigurumi(id):
+    amigurumi = Amigurumi.query.get(id)
+    if amigurumi:
+        amigurumi.idproducto = request.json["idproducto"]
+        amigurumi.codigo = request.json["codigo"]
+        amigurumi.nombre = request.json["nombre"]
+        amigurumi.descripcion = request.json["descripcion"]
+        amigurumi.precio = request.json["precio"]
+        amigurumi.stock = request.json["stock"]
+        amigurumi.imagen = request.json["imagen"]
+
+        db.session.commit()
+        return jsonify({"message": "Amigurumi actualizado correctamente"})
+    else:
+        return jsonify({"message": "Amigurumi no encontrado"}), 404
+
+
+@app.route("/amigurumi/<id>", methods=["DELETE"])
+def delete_amigurumi(id):
+    amigurumi = Amigurumi.query.get(id)
+
+    if amigurumi:
+        db.session.delete(amigurumi)
+        db.session.commit()
+        return jsonify({"message": "Amigurumi eliminado correctamente"})
+    else:
+        return jsonify({"message": "Amigurumi no encontrado"}), 404
+#**************Patrones********************
+
+@app.route("/patron", methods=["POST"])
+def create_patron():
+    tipo = request.json["tipo"]
+    new_patron = Patron(tipo)
+
+    db.session.add(new_patron)
+    db.session.commit()
+
+    return patron_schema.jsonify(new_patron)
 
 @app.route('/patron', methods=['GET'])
 def get_patron():
     all_patrones = Patron.query.all()
     result = patrones_schema.dump(all_patrones)
     return jsonify(result)
-# Esta función decorada con @app.route('/patron', methods=['GET']) define una ruta '/patron' con el método GET. Cuando se accede a esta ruta, se ejecuta la función get_patron(). Dentro de esta función, se realiza una consulta a la base de datos para obtener todos los objetos Patron y luego se utiliza el esquema patrones_schema para serializar los resultados en formato JSON.
+
+@app.route("/patron/<id>", methods=["PUT"])
+def update_patron(id):
+    patron = Patron.query.get(id)
+    if patron:
+        patron.tipo = request.json["tipo"]
+        db.session.commit()
+        return jsonify({"message": "Patrón actualizado correctamente"})
+    else:
+        return jsonify({"message": "Patrón no encontrado"}), 404
+
+@app.route("/patron/<id>", methods=["DELETE"])
+def delete_patron(id):
+    patron = Patron.query.get(id)
+
+    if patron:
+        db.session.delete(patron)
+        db.session.commit()
+        return jsonify({"message": "Patrón eliminado correctamente"})
+    else:
+        return jsonify({"message": "Patrón no encontrado"}), 404
+
+#**************Pedidos********************
+
+@app.route("/pedido", methods=["POST"])
+def create_pedido():
+    tipo = request.json["tipo"]
+    new_pedido = Pedido(tipo)
+
+    db.session.add(new_pedido)
+    db.session.commit()
 
 @app.route('/pedido', methods=['GET'])
 def get_pedido():
     all_pedidos = Pedido.query.all()
     result = pedidos_schema.dump(all_pedidos)
     return jsonify(result)
+
+@app.route("/pedido/<id>", methods=["DELETE"])
+def delete_pedido(id):
+    pedido = Pedido.query.get(id)
+
+    if pedido:
+        db.session.delete(pedido)
+        db.session.commit()
+        return jsonify({"message": "Pedido eliminado correctamente"})
+    else:
+        return jsonify({"message": "Pedido no encontrado"}), 404
 
 @app.route('/cliente', methods=['GET'])
 def get_cliente():
@@ -199,12 +344,6 @@ def get_factura():
 
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all() 
-        
-        # Ejemplo 1: Consulta a la base de datos
-        all_productos = Producto.query.all()
-        # Realiza operaciones con los datos obtenidos de la base de datos
-        
-    # Ejemplo 2: Iniciar el servidor Flask
+        db.create_all()
+
     app.run(debug=True)
-#Esta parte del código asegura que el servidor Flask se ejecute solo cuando el script se ejecuta directamente (no cuando se importa como un módulo). Dentro de if __name__ == '__main__':, se crea la estructura de la base de datos utilizando db.create_all() y luego se inicia la aplicación Flask utilizando app.run(debug=True).
