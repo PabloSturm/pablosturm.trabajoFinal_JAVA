@@ -1,16 +1,20 @@
-from flask import Flask, jsonify, request
+from flask import Flask ,jsonify ,request
+# del modulo flask importar la clase Flask y los métodos jsonify,request
+from flask_cors import CORS       # del modulo flask_cors importar CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-from flask_cors import CORS
 
-app = Flask(__name__)
-CORS(app)
+
+app=Flask(__name__)  # crear el objeto app de la clase Flask
+CORS(app) #modulo cors es para que me permita acceder desde el frontend al backend
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://MViktoriaU:Delfines/2@MViktoriaU.mysql.pythonanywhere-services.com/MViktoriaU$default'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
+
 
 class Producto(db.Model):
     __tablename__ = 'producto'
@@ -114,6 +118,10 @@ class Factura(db.Model):
     def __init__(self, idcliente, fecha_emision):
         self.idcliente = idcliente
         self.fecha_emision = fecha_emision
+
+
+with app.app_context():
+    db.create_all()
 
 
 class ProductoSchema(ma.Schema):
@@ -338,7 +346,14 @@ def get_factura():
     result = facturas_schema.dump(all_facturas)
     return jsonify(result)
 
+#*************#*************#*************#*************#*************
+
+
+# programa principal *******************************
+if __name__ == '__main__':
+    app.run(debug=True, port=8080)
+
 
 @app.route('/')
 def hello_world():
-    return 'Hello from Flask!'
+    return 'Hello YOU !'
