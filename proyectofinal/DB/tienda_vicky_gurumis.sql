@@ -27,16 +27,16 @@ DROP TABLE IF EXISTS `amigurumi`;
 CREATE TABLE `amigurumi` (
   `idamigurumi` int NOT NULL AUTO_INCREMENT,
   `idproducto` int NOT NULL,
-  `codigo` int NOT NULL,
+  `codigo` varchar(10) DEFAULT NULL,
   `nombre` varchar(20) NOT NULL,
-  `descripcion` varchar(100) DEFAULT NULL,
+  `descripcion` varchar(500) DEFAULT NULL,
   `precio` double DEFAULT NULL,
-  `stock` int DEFAULT NULL,
-  `imagen` varchar(255) DEFAULT NULL,
+  `stock` varchar(20) DEFAULT NULL,
+  `imagen` longblob,
   PRIMARY KEY (`idamigurumi`),
   KEY `idproducto` (`idproducto`),
   CONSTRAINT `amigurumi_ibfk_1` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`idproducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,6 +45,7 @@ CREATE TABLE `amigurumi` (
 
 LOCK TABLES `amigurumi` WRITE;
 /*!40000 ALTER TABLE `amigurumi` DISABLE KEYS */;
+INSERT INTO `amigurumi` VALUES (1,1,'AJ001','Jirafa',' Esta jirafa esta tejida a crochet en hilo de algodon 8/6 premium, peinado,sedificado.\r  Rellena de vellon siliconado premium.\r   Tiene ojitos de doble seguridad para evitar accidentes.\r  27 cm de alto aproximadamente',15,'A pedido',_binary 'C:\\Users\\Usuario\\Desktop\\github\\pablosturm.github.io\\img\\animales\\jirafaamarilla.png\'');
 /*!40000 ALTER TABLE `amigurumi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,12 +114,12 @@ DROP TABLE IF EXISTS `patron`;
 CREATE TABLE `patron` (
   `idpatron` int NOT NULL AUTO_INCREMENT,
   `idproducto` int NOT NULL,
-  `codigo` int NOT NULL,
+  `codigo` varchar(10) NOT NULL,
   `nombre` varchar(20) NOT NULL,
-  `descripcion` varchar(100) DEFAULT NULL,
+  `descripcion` varchar(200) DEFAULT NULL,
   `precio` double DEFAULT NULL,
   `stock` int DEFAULT NULL,
-  `imagen` varchar(255) DEFAULT NULL,
+  `imagen` longblob,
   PRIMARY KEY (`idpatron`),
   KEY `idproducto` (`idproducto`),
   CONSTRAINT `patron_ibfk_1` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`idproducto`)
@@ -178,7 +179,7 @@ CREATE TABLE `producto` (
   `idproducto` int NOT NULL AUTO_INCREMENT,
   `tipo` varchar(20) NOT NULL,
   PRIMARY KEY (`idproducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,6 +188,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
+INSERT INTO `producto` VALUES (1,'amigurumi animales'),(2,'amigurumi personajes'),(3,'amigurumi munequeria'),(4,'patrones free'),(5,'patrones de pago');
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -199,4 +201,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-08 22:14:09
+-- Dump completed on 2023-07-09 12:56:07
