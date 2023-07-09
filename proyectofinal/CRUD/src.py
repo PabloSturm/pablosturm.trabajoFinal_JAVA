@@ -12,7 +12,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
-
 class Producto(db.Model):
     __tablename__ = 'producto'
     idproducto = db.Column(db.Integer, primary_key=True)
@@ -26,11 +25,11 @@ class Amigurumi(db.Model):
     __tablename__ = 'amigurumi'
     idamigurumi = db.Column(db.Integer, primary_key=True)
     idproducto = db.Column(db.Integer, db.ForeignKey('producto.idproducto'))
-    codigo = db.Column(db.varchar(10), nullable=False)
-    nombre = db.Column(db.varchar(200), nullable=False)
-    descripcion = db.Column(db.varchar(500))
-    precio = db.Column(db.double)
-    stock = db.Column(db.varchar(20))
+    codigo = db.Column(db.String(10), nullable=False)
+    nombre = db.Column(db.String(20), nullable=False)
+    descripcion = db.Column(db.String(500))
+    precio = db.Column(db.Float)
+    stock = db.Column(db.String(20))
     imagen = db.Column(db.String(255))
 
     def __init__(self, idproducto, codigo, nombre, descripcion, precio, stock, imagen):
@@ -47,9 +46,9 @@ class Patron(db.Model):
     __tablename__ = 'patron'
     idpatron = db.Column(db.Integer, primary_key=True)
     idproducto = db.Column(db.Integer, db.ForeignKey('producto.idproducto'))
-    codigo = db.Column(db.varchar(10), nullable=False)
-    nombre = db.Column(db.varchar(20), nullable=False)
-    descripcion = db.Column(db.varchar(200))
+    codigo = db.Column(db.String(10), nullable=False)
+    nombre = db.Column(db.String(20), nullable=False)
+    descripcion = db.Column(db.String(500))
     precio = db.Column(db.Float)
     stock = db.Column(db.Integer)
     imagen = db.Column(db.String(255))
