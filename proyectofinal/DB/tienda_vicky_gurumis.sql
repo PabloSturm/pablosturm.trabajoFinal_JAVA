@@ -28,7 +28,7 @@ CREATE TABLE `amigurumi` (
   `idamigurumi` int NOT NULL AUTO_INCREMENT,
   `idproducto` int NOT NULL,
   `codigo` varchar(10) DEFAULT NULL,
-  `nombre` varchar(20) NOT NULL,
+  `nombre` varchar(200) DEFAULT NULL,
   `descripcion` varchar(500) DEFAULT NULL,
   `precio` double DEFAULT NULL,
   `stock` varchar(20) DEFAULT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE `amigurumi` (
 
 LOCK TABLES `amigurumi` WRITE;
 /*!40000 ALTER TABLE `amigurumi` DISABLE KEYS */;
-INSERT INTO `amigurumi` VALUES (1,1,'AJ001','Jirafa',' Esta jirafa esta tejida a crochet en hilo de algodon 8/6 premium, peinado,sedificado.\r  Rellena de vellon siliconado premium.\r   Tiene ojitos de doble seguridad para evitar accidentes.\r  27 cm de alto aproximadamente',15,'A pedido',_binary 'C:\\Users\\Usuario\\Desktop\\github\\pablosturm.github.io\\img\\animales\\jirafaamarilla.png\'');
+INSERT INTO `amigurumi` VALUES (1,1,'Aj001','Jirafa ',' Esta jirafa esta tejida a crochet en hilo de algodon 8/6 premium, peinado,sedificado.\r  Rellena de vellon siliconado premium.\r   Tiene ojitos de doble seguridad para evitar accidentes.\r  27 cm de alto aproximadamente',15,'A pedido',_binary 'C:\\Users\\Usuario\\Desktop\\github\\pablosturm.github.io\\img\\animales\\jirafaamarilla.png\''),(2,2,'Aa001','Abeja Dormida','Esta abejita esta tejida a crochet en hilo de algodon 8/6 premium, peinado, sedificado.Rellena de vellon siliconado premium.Tiene ojitos de doble seguridad para evitar accidentes.40 cm de estirada aproximadamente',20000,'A Pedido',NULL),(3,3,'Ap001','El Principito\" de Gala','\"El Principito\" está tejido a crochet en hilo de algodon 8/6 premium, peinado, sedificado.Relleno de vellon siliconado premium.Tiene ojitos de doble seguridad para evitar accidentes.',20000,'A Pedido',NULL),(4,4,'Ap002','Muñeca basada en \"Masha','\"Masha\" esta tejida a crochet en hilo de algodón 8/6 premium, peinado, sedificado.Rellena de vellon siliconado premium.Tiene ojitos de doble seguridad para evitar accidentes.',15000,'A Pedido',NULL);
 /*!40000 ALTER TABLE `amigurumi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +123,7 @@ CREATE TABLE `patron` (
   PRIMARY KEY (`idpatron`),
   KEY `idproducto` (`idproducto`),
   CONSTRAINT `patron_ibfk_1` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`idproducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,6 +132,7 @@ CREATE TABLE `patron` (
 
 LOCK TABLES `patron` WRITE;
 /*!40000 ALTER TABLE `patron` DISABLE KEYS */;
+INSERT INTO `patron` VALUES (1,1,'Pp001','Chanchito Pua','atron gratuito del chanchito pua',0,10000,NULL),(2,2,'Pa001','Abejita','Patron gratuito abejita',0,10000,NULL);
 /*!40000 ALTER TABLE `patron` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,6 +192,31 @@ LOCK TABLES `producto` WRITE;
 INSERT INTO `producto` VALUES (1,'amigurumi animales'),(2,'amigurumi personajes'),(3,'amigurumi munequeria'),(4,'patrones free'),(5,'patrones de pago');
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `tbimagen`
+--
+
+DROP TABLE IF EXISTS `tbimagen`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbimagen` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `NombreImagen` varchar(45) DEFAULT NULL,
+  `imagen` longblob,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Id` (`Id`,`NombreImagen`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbimagen`
+--
+
+LOCK TABLES `tbimagen` WRITE;
+/*!40000 ALTER TABLE `tbimagen` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbimagen` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -201,4 +227,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-09 12:56:07
+-- Dump completed on 2023-07-09 14:33:07
