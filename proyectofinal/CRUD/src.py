@@ -12,7 +12,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
-
 class Producto(db.Model):
     __tablename__ = 'producto'
     idproducto = db.Column(db.Integer, primary_key=True)
