@@ -66,7 +66,7 @@ CREATE TABLE `cliente` (
   `email` varchar(30) NOT NULL,
   `password` varchar(32) NOT NULL,
   PRIMARY KEY (`idcliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,6 +75,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES (1,'John','Doe',30,'1234567890','123 Main St','johndoe@example.com','password123'),(2,'María','Gómez',25,'987654321','Calle Principal 456','maria@example.com','contraseña123'),(3,'Solange','Pérez',44,'351666666','Av. Colon 1500','solange@example.com','sopadeletras1234');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +133,7 @@ CREATE TABLE `patron` (
 
 LOCK TABLES `patron` WRITE;
 /*!40000 ALTER TABLE `patron` DISABLE KEYS */;
-INSERT INTO `patron` VALUES (1,1,'Pp001','Chanchito Pua','atron gratuito del chanchito pua',0,10000,NULL),(2,2,'Pa001','Abejita','Patron gratuito abejita',0,10000,NULL);
+INSERT INTO `patron` VALUES (1,5,'Pp001','Chanchito Pua','atron gratuito del chanchito pua',0,10000,NULL),(2,5,'Pa001','Abejita','Patron gratuito abejita',0,10000,NULL);
 /*!40000 ALTER TABLE `patron` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +158,7 @@ CREATE TABLE `pedido` (
   KEY `idproducto` (`idproducto`),
   CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`idcliente`) REFERENCES `cliente` (`idcliente`),
   CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`idproducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,9 +179,9 @@ DROP TABLE IF EXISTS `producto`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `producto` (
   `idproducto` int NOT NULL AUTO_INCREMENT,
-  `tipo` varchar(20) NOT NULL,
+  `tipo` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idproducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +190,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES (1,'amigurumi animales'),(2,'amigurumi personajes'),(3,'amigurumi munequeria'),(4,'patrones free'),(5,'patrones de pago');
+INSERT INTO `producto` VALUES (1,'amigurumi animal jirafa'),(2,'amigurumi animal abeja'),(3,'amigurumi personaje '),(4,'amigurumi muñeca'),(5,'patrones gratuito'),(6,'patron de pago');
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -227,4 +228,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-09 14:33:07
+-- Dump completed on 2023-07-09 20:39:46

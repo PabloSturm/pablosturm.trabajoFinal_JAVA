@@ -9,7 +9,7 @@ app=Flask(__name__)  # crear el objeto app de la clase Flask
 CORS(app) #modulo cors es para que me permita acceder desde el frontend al backend
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://MViktoriaU:Delfines/2@MViktoriaU.mysql.pythonanywhere-services.com/MViktoriaU$default'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://MViktoriaU:Delfines/2@MViktoriaU.mysql.pythonanywhere-services.com/MViktoriaU$Tienda'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -127,7 +127,7 @@ with app.app_context():
 class ProductoSchema(ma.Schema):
     class Meta:
         model = Producto
-
+        fields = ('idproducto','tipo' )
 
 class AmigurumiSchema(ma.Schema):
     class Meta:
@@ -144,16 +144,18 @@ class PatronSchema(ma.Schema):
 class PedidoSchema(ma.Schema):
     class Meta:
         model = Pedido
+        fields = ('idpedido', 'idcliente', 'fecha', 'idproducto', 'cantidad_solicitada', 'precio', 'fecha_pedido', 'estado_pedido')
 
 
 class ClienteSchema(ma.Schema):
     class Meta:
         model = Cliente
-
+        fields = ('idcliente', 'nombre', 'apellido', 'edad', 'cel', 'direccion', 'email', 'password')
 
 class FacturaSchema(ma.Schema):
     class Meta:
         model = Factura
+        fields = ('idfactura', 'idcliente', 'fecha_emision')
 
 
 producto_schema = ProductoSchema()
@@ -351,7 +353,7 @@ def get_factura():
 
 # programa principal *******************************
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(debug=True, port=8083)
 
 
 @app.route('/')
