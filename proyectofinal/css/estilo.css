@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+}
+body,header,main,footer {
+  max-width: 2000px;
+  min-height: 50px;
+  min-width: 450px;
+  background: rgb(254, 248, 239);
+}
+/*encabezado*/
+header {
+  width: 100%;
+  height: 157px;
+  background: #f5eadb;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+.img_logo {
+  width: 150px;
+  margin-left: 5%;
+  padding: 10px;
+}
+#nombreE {
+  font-family: "Clicker Script", cursive;
+  font-size: 4rem;
+  font-weight: bold;
+  position: fixed;
+  color: #784b4a;
+  margin-top: 50px;
+  margin-left: 40px;
+}
+/* menues y submenues*/
+.menu {
+  width: auto;
+  float: right;
+  margin-top: 115px;
+  margin-right: 2%;
+}
+.menu a {
+  padding: 15px;
+  text-decoration: none;
+  color: #784b4a;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  transition: 0.4s;
+}
+.menu a:hover {
+  color: rgb(239, 192, 159);
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.menu li {
+  position: relative;
+}
+.menu li ul {
+  position: absolute;
+}
+/*primer nivel menu*/
+.menu > ul {
+  display: table;
+  width: 100%;
+}
+.menu > ul > li {
+  float: left;
+}
+/*segundo nivel menu*/
+.menu li li {
+  background: #f5eadb;
+  max-height: 0;
+  transition: all 0.4s;
+  overflow: hidden;
+  width: 120px;
+}
+.menu li:hover > ul > li {
+  max-height: 500px;
+  overflow: visible;
+}
+.menu > ul > li > ul {
+  top: 78%;
+}
+/* tercer nivel menu*/
+.menu ul ul ul {
+  top: 0;
+  left: 100%;
+}
+#check {
+  display: none;
+}
+.icon_menu {
+  display: none;
+}
+#check:checked ~ .menu {
+  height: 180px;
+}
+/* ================================ CUERPO PRINCIPAL ================================================*/
+main {
+  position: relative;
+  top: 150px;
+}
+footer {
+  position: absolute;
+  width: 100%;
+  height: 75px;
+  background: linear-gradient(to right, rgb(239, 192, 159), rgb(138, 107, 84));
+}
+.spoty {
+  position: fixed;
+  top: 2%;
+  right: 3%;
+}
+/* Estilo para el botón "Nuevo" */
+.btn-Nuevo {
+  background-color: #ebccf1; /* Celeste */
+  color: #251001; /* Chocolate */
+}
+/* Estilo para el botón "Editar" */
+.btn-editar {
+  background-color: #5dc5ee; /* Celeste */
+  color: #251001; /* Chocolate */
+}
+
+/* Estilo para el botón "Eliminar" */
+.btn-eliminar {
+  background-color: #958febee; /* Rosa claro */
+  color: #251001; /* Chocolate */
+}
+/* Estilos para la sección de Productos */  
+    h1 {
+        font-family: 'Clicker Script', cursive;
+        font-weight: bold;
+    }
+    
+/*=================tablas====================*/
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+}
+
+.table thead th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table tbody td {
+  vertical-align: middle;
+}
+
+.btn {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-editar {
+  background-color: #5dc5ee;
+  color: #251001;
+}
+
+.btn-eliminar {
+  background-color: #958febee;
+  color: #251001;
+}
+
+/* ================ responsive ==============*/
+
+@media screen and (max-width: 1300px) {
+  .contenedor_texto h3 {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .icon_menu {
+    display: block;
+    color: chocolate;
+    float: right;
+    padding: 3px;
+    font-size: 24px;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    margin-top: 115px;
+    margin-right: 5%;
+  }
+  .icon_menu:hover {
+    background: rgb(240, 216, 171);
+    cursor: pointer;
+  }
+  .menu {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 25%;
+    text-align: right;
+    display: none;
+    background: #f5eadb;
+  }
+  .menu ul li {
+    width: 100%;
+  }
+  .menu ul li a {
+    width: 100%;
+    padding: 8px 10px;
+  }
+  .menu ul li ul {
+    position: relative;
+    width: 80%;
+    top: 0;
+    left: 10%;
+  }
+  .menu ul li ul li ul {
+    position: relative;
+    width: 60%;
+    left: 10%;
+  }
+  #check:checked ~ .menu {
+    display: block;
+  }
+  .spoty {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .img_logo {
+    width: 120px;
+    margin-left: 4%;
+    margin-top: -100px;
+    padding: 8px;
+  }
+  #nombreE {
+    font-size: 2.5rem;
+    margin-top: 30px;
+    margin-left: 8px;
+  }
+  header {
+    height: 130px;
+  }
+  .icon_menu {
+    margin-top: 95px;
+    font-size: 18px;
+  }
+  .menu {
+    top: 12%;
+  }
+  main {
+    top: 125px;
+  }
+}

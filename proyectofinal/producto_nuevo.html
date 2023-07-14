@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+        <link
+        rel="shortcut icon"
+        href="../favicom/VickyGurumiS.ico"
+        type="image/x-icon"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Kanit:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="./css/estilo.css">
+       <link rel="stylesheet" href="../css/main_index.css">
+
+      
+      <title>V i c k y G u r u m i S - Nuevo Producto</title>
+</head>
+
+<body>
+    <header>
+        <img src="../iconos/Gurumis.png" class="img_logo" alt=" logo" />
+        <label for="campo_nombre" id="nombreE">Vicky GurumiS</label>
+        <input type="checkbox" id="check" />
+        <label for="check">
+            <iconify-icon icon="material-symbols:menu" class="icon_menu"></iconify-icon>
+        </label>
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html" >Inicio</a></li>
+                <li><a href="../info.html">Acerca de</a></li>
+                <li><a href="productos.html" style="background: #e5c89f ; color:rgb(103, 100, 100)">Productos</a>
+                    <ul>
+                        <li><a href="#">Amigurumis</a>
+                            <ul>
+                                <li><a href="../personajes.html">Personajes</a></li>
+                                <li><a href="../animales.html">Animales</a></li>
+                                <li><a href="../munequeria.html">Muñequería</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Patrones</a>
+                            <ul>
+                                <li><a href="../patrones_free.html">Free</a></li>
+                                <li><a href="../patrones_de_pago.html">De_Pago</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="../contacto.html">Contacto</a></li>
+                <li><a href="../carrito.html">Tienda</a></li>
+        
+             <li><a href="#">De Administracion <br></a>
+             <ul>
+                <li><a href="productos.html" style="background: #e5c89f ; color:rgb(103, 100, 100)">Consultar Productos</a>
+                <li><a href="producto_nuevo.html" target="_blank">Ingresar Producto Nuevo</a></li>
+                <li><a href="producto_update.html" target="_blank">Actualizar Producto</a></li>
+                <li><a href="IngresarPedido.html" target="_blank">Ingresar Pedido</a></li>
+
+            </ul>
+    </ul>
+</nav>
+    </header>
+
+  <main>
+    <br>
+            <h1> Ingresar Nuevos productos "Vicky GurumiS"  </h1>
+            <br>
+            <br>
+    <div class="container" id="app">
+      <form style="background-color: rgb(238, 191, 173);margin:10px auto ; width: 400px; padding: 20px;">
+        <h1>Ingresar el Nuevo Producto</h1>
+        <div class="mb-3">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" v-model="nombre">
+        </div>
+        <!-- <div class="mb-3">
+          <label for="nombre">Descripcion</label>
+          <input type="text" name="nombre" id="nombre" v-model="nombre">
+        </div> -->
+        <div class="mb-3">
+          <label for="precio">Precio</label>
+          <input type="number" name="precio" id="precio" v-model="precio">
+        </div>
+        <div class="mb-3">
+          <label for="stock">Stock</label>
+          <input type="number" name="stock" id="stock" v-model="stock">
+        </div>
+        <div class="mb-3">
+          <label for="imagen">Imagen (URL o subir desde tu computadora)</label>
+          <input type="text" name="imagen" id="imagen" v-model="imagen">
+          <input type="file" id="imagenUpload" @change="handleFileUpload">
+          <img width="100" :src="imagen" alt="">
+        </div>   
+        
+
+        <button type="button" class="btn btn-success" v-on:click="grabar()">Grabar</button>
+      </form>
+
+
+    </div>
+
+    <footer>
+      <p class="parrafo1">Derechos&Reservados 2023</p>
+      <a href="https://www.instagram.com/vicky_gurumis/" target="_blank">
+          <img src="../img/Vicky_GurumiS.png" alt="Instagram" width="50" height="50" /></a>
+  </footer>
+  <!-- <script> src = "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity = "sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin = "anonymous"</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"></script> -->
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      <script src="./js/productos.js"></script>
+</main>
+</body>
+
+</html>
